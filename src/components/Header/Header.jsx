@@ -7,7 +7,7 @@ export const Header = () => {
 
   return (
     <div className='header'>
-      <img src="../../../public/header/logo.svg" alt="logo" className='header__logo'/>
+      <img src="/header/logo.svg" alt="logo" className='header__logo'/>
       <p className='header__contacts' dangerouslySetInnerHTML={{ __html: t('header.contacts') }}></p>
     </div>
   )
