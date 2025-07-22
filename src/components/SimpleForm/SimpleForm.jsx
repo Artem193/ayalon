@@ -91,7 +91,7 @@ export const SimpleForm = () => {
         formDataToSend.append(key, value);
       });
 
-      const response = await fetch('http://localhost:3001/send-pdf', {
+      const response = await fetch('/send-pdf', {
         method: 'POST',
         body: formDataToSend,
       });
