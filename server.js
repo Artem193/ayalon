@@ -150,6 +150,7 @@ app.post('/send-pdf', upload.fields([{ name: 'pdfEn' }, { name: 'pdfTh' }]), asy
 });
 
 const PORT = process.env.PORT || 3001;
+console.log('🧪 ENV VARS:', process.env);
 app.listen(PORT, () => {
   console.log(`✅ Server is running on port ${PORT}`);
 });
