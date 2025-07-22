@@ -1,0 +1,16 @@
+.infoBlock {
+  margin-bottom: 20px;
+  border: 1px solid;
+
+  &__text {
+    margin: 0;
+    background-color: #f2dbdb;
+    border-bottom: 1px solid;
+    padding: 5px 10px;
+    font-weight: 700;
+  }
+
+  &__description {
+    margin: 5px 10px;
+  }
+}

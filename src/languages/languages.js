@@ -1,0 +1,193 @@
+export const languages = {
+  en: {
+    translation: {
+      header: {
+        contacts: '<strong>HEAD OFFICE:</strong> AYALON HOUSE, 12 Abba Hillel Silver St., Ramat Gan 5250606<br>mail@ayalon-ins.co.il  www.ayalon-ins.co.il  P.O.B 10957  ISRAEL',
+      },
+
+      languageSwitcher: {
+        text: 'Select Language',
+      },
+
+      simpleForm: {
+        title: 'DECLARATION OF HEALTH<br>MEDICAL INSURANCE FOR FOREIGN WORKERS OR TOURISTS',
+
+        signature: 'Signature and date',
+        clear: 'Clear',
+
+        nameProposer: 'Name of the proposer',
+        signatureProposer: 'Signature of the proposer*',
+
+        submit:'Submit',
+      },
+
+      personalDetails: {
+        text: '1. Details of the proposer',
+
+        surname: '1. Surname',
+        firstName: '2. First name',
+        passport: '3. Passport number',
+        gender: '4. Gender',
+        dateOfBirth: '5. Date of birth',
+        weight: '6. Weight',
+        height: '7. Height',
+
+        male: 'M',
+        female: 'F',
+      },
+
+      infoBlock: {
+        text: '2. Declaration of health',
+        description: 'Please mark X in the relevant box. If you answer YES to any question, please provide further details. You may be required to provide additional medical documents from your doctor concerning any medical condition, test result and details of any treatment you receive.',
+      },
+
+      generalQuestions: {
+        text: 'General questions',
+        yes: 'Yes',
+        no: 'No',
+
+        question1: '1. In the last ten years have you had any surgery or been advised to undergo surgery?',
+        question2: '2. In the last ten years have you been hospitalised? If yes, please state when and the reason and attach a medical report from the hospital and a report concerning your current condition.',
+        question3: '3. Do you currently take medication on a regular basis or have you done so in the last ten years? If yes, please state the name of the medicine and the reason why you take it.',
+        question4: '4. Do you drink alcohol on a regular basis or have you done so in the past? If yes, please state which drinks and the frequency',
+        question5: '5. Do you take drugs or have you taken drugs in the past?',
+        question6: '6. Do you smoke more than 20 cigarettes per day?',
+        question7: '7. In the last 12 months have you lost more than 5 kg in weight (other than due to a diet)? If so, please provide details',
+        question8: '8. Have your undergone any laboratory tests such as blood or urine (with abnormal results) or any medical tests including catherisation, echocardiography, endoscopy, invasive tests to detect cancer, biopsy, ECG, x-ray or ultrasound, scans, CT, MRI? If yes, please state the reason, date and result',
+        question9: '9. Do you or have you suffered from total or partial incapacity to work?',
+        question10: '10. Are you disabled?',
+        question11: '11. Do you use any type of medical device?',
+        question12: '12. Do you suffer from any birth defect?',
+        question13: '13. Do you suffer from any autoimmune disease including lupus?',
+        question14: '14. Are you waiting to receive any medical treatment or hospitalisation?',
+        question15: '15. Are you a carrier of the HIV antibody and/or virus?',
+        question16: '<strong>16. Gynaecology – women only:</strong><br>A. Are you pregnant?',
+        question17: 'B. Do you or have you suffered from gynaecological disorders such as: irregular menstruation, infertility, bleeding disorders, uterine diseases, ovarian disorders, abnormal results of gynaecological tests (such as PAP) or any other gynaecological disorders?',
+        question18: 'C. Do you have any breast disorder or breast lumps?',
+        question19: 'D. Have you undergone a Caesarean section?',
+
+        text2: 'Do you or have you suffered from any of the following illnesses or conditions?',
+        question20: '17. <strong>Neurological disorders</strong> – including vertigo, headaches, migraines, fainting, paralysis, epilepsy, memory disorders, sensory processing disorders, degenerative diseases, stroke, brain haemorrhage, C.V.A., loss of balance, Alzheimer’s disease, Parkinson’s disease, mental infirmity, dementia, multiple sclerosis.',
+        question21: '18. <strong>Psychiatric disorders</strong> – any type of disorder or attempted suicide.',
+        question22: '19. <strong>Allergies</strong> – Please provide details of the allergy and any treatment you receive.',
+        question23: '20. <strong>Respiratory disorders</strong> – including asthma, tuberculosis, recurrent pneumonia, cystic fibrosis, bronchitis, emphysema, recurrent infections in the respiratory tract, COPD, pneumothorax.',
+        question24: '21. <strong>Heart and blood pressure disorders</strong> – including angina, heart attack, arrythmia, heart valve disease, congenital heart disease, perimyocarditis, heart disease, high blood pressure or blood pressure fluctuations.',
+        question25: '22. <strong>Cardiovascular disorders</strong> – including hypercoagulation, deep vein thrombosis, varicose veins, cardiovascular disease, peripheral vascular disease.',
+        question26: '23. <strong>Digestive system</strong> – including peptic disorders (peptic ulcers or duodenal ulcers), heartburn, infectious diseases of the intestines, Crohn’s disease, ulcerative colitis, gastrointestinal haemorrhage, haemorrhoids, anorectal disorders, liver disorders or liver disease, jaundice, gall bladder infection, gallstones, oesophageal disorders, pancreatic infections.',
+        question27: '24. <strong>Hernia</strong> – of any type including incisional hernia.',
+        question28: '25. <strong>Kidney and urinary tract infections</strong> – including kidney stones, kidney or urinary tract infections or obstructions, blood or protein in urine, chronic kidney disease, kidney cysts, prostate problems.',
+        question29: '26. <strong>Joints and bone</strong> – including arthritis, gout, back, spine, knee and other joint disorders, fracture surgery, bone diseases.',
+        question30: '27. <strong>Metabolism and immune system</strong> – including diabetes, thyroid disorders, disorders of the adrenal gland, pituitary gland, lymph gland, salivary gland or other glands, hyperlipaemia, blood disease or clotting, anaemia.',
+        question31: '28. <strong>Malignant diseases (cancer)</strong> – including malignant or pre-malignant tumours, or pre-malignant illnesses. Please state the type, date of diagnosis and treatment.',
+        question32: '29. <strong>Dermatology and venereology</strong> – including skin growths, psoriasis, herpes, syphilis, warts, papilloma / condyloma.',
+        question33: '30. <strong>Eye disorders and diseases</strong> – including cataract, squinting, blindness, cornea or reticulum problems, distorted vision, astigmatism, glaucoma.',
+        question34: '31. <strong>Ear, nose and throat</strong> – including recurrent infections, rhinosinusitis, polyps, tonsillitis, hearing disorders, sleep apnoea, snoring.',
+
+        text3: 'Please provide further information concerning any questions to which you have replied “YES”. If there is insufficient space please continue on another sheet and attach any medical documentation.',
+      },
+
+      infoProposer: {
+        text1: 'Information for the proposer',
+        list1: '1. In accordance with the policy conditions, the policy can be extended within 90 days after the policy has expired, subject to payment of the premium for the period between the expiry of the policy and the start of the extension (such payment can be made by the insured or the employer) for as long as you stay in Israel as a foreign worker. After 90 days have passed since the policy has expired, a new medical underwriting process will be required. <br><br>2. If you suffer from any disability, as defined in the Equal Rights for Disabled Persons Act – 1988, meaning that you suffer from any physical disability, mental or cognitive impairment, whether permanent or temporary, which severely restricts your functioning in typical daily activities, please notify the insurance agent whose details appear in this form.',
+
+        text2: 'Declaration of the proposer',
+        list2: '1. <strong>I hereby declare, agree and undertake that:</strong> (1) All of the replies are true, complete and have been provided of my own free will. (2) The replies appearing in the declaration of health and any other information supplied to the insurer, together with the insurer’s standard conditions in this regard are a fundamental term of the insurance contract between me and the insurer and will form an integral part of the insurance contract. (3) The insurer is free to decide whether to accept or reject this application without having to justify its decision. I know that the insurance contract will take effect only after the insurer confirms acceptance to the insurance in writing and after the first premium has been paid in full.<br><br>2. I know that in accordance with this policy the insurer will be exempt from providing any service in connection with any disorder, birth defect or hereditary disease and/or medical condition and/or illness and/or disease and its impact, whether treated or not, directly or indirectly arising from and/or worsened by any medical condition I suffered from before the insurance policy was arranged, subject to the provisions of the Foreign Workers Ordinance and the terms and conditions of the policy.<br><br>3. I hereby declare that I have not been refused insurance by any other insurance company.<br><br>4. I confirm that I have received information concerning the insurance including a description of the main covers, the insurance premium, the period of insurance, the main sums insured and limits of liability and the possibility of obtaining the full policy wording.<br><br>5. By arranging this policy you authorise your insurance agent to submit and receive in your name / for you any notices and/or documents in connection with the underwriting process and the process of arranging this policy.<br><br>6. I agree that the insurance policy will be sent to me by the insurance agent whose details appear in this form.<br><br>7. <strong>Waiver of medical confidentiality</strong><br>I the undersigned, hereby authorise any health maintenance organisation and/or medical institution and any doctor, hospital or other health facility and/or any insurance company and/or institution and/or entity to supply to Ayalon Insurance Company Ltd. (hereinafter: “the insurance company”) all information without exception and in the format requested by the insurance company concerning my medical condition and/or any illness or medical condition affecting me in the past, present or future, and I hereby exempt you from the duty of medical confidentiality and also exempt the insurance company from this duty. This waiver binds me, my heirs and legal representatives and anyone replacing them.<br><br>If you wish to obtain the full policy wording and/or any other information concerning the underwriting process and the process of arranging this policy directly from the insurance company, please contact us at any time.',
+      },
+    },
+  },
+
+  th: {
+    translation: {
+      header: {
+        contacts: '<strong>HEAD OFFICE:</strong> AYALON HOUSE, 12 Abba Hillel Silver St., Ramat Gan 5250606<br>mail@ayalon-ins.co.il  www.ayalon-ins.co.il  P.O.B 10957  ISRAEL',
+      },
+
+      languageSwitcher: {
+        text: 'เลือกภาษา',
+      },
+
+      simpleForm: {
+        title: 'ประก ันภ ัยสุขภาพ<br>ประกนั สุขภาพสา หรบัแรงงานตา่ งดา้วหรอืนกั ท่องเทีย่ ว',
+
+        signature: 'ลายเซน็ และวนั ที',
+        clear: 'ล้าง',
+
+        nameProposer: 'ชือ่ ของผู ้เอาประกัน',
+        signatureProposer: 'ลายเซ็นของผู ้เอาประกัน*',
+        submit:'ส่งแบบฟอร์ม',
+      },
+
+      personalDetails: {
+        text: '1. รายละเอียดของผู ้ขอเอาประก ันภ ัย',
+        surname: '1. นามสกุล',
+        firstName: '2. ชือ',
+        passport: '3. หมายเลขหนังสือเดินทาง',
+        gender: '4. เพศ',
+        dateOfBirth: '5. วันเกิด',
+        weight: '6. น้าหนัก',
+        height: '7. ส่วนสูง',
+
+        male: 'ชาย',
+        female: 'หญิง',
+      },
+
+      infoBlock: {
+        text: '2. ประกาศด้านสุขภาพ',
+        description: 'โปรดท าเครืองหมาย ่ X ในช ่องที่ เกียวข ้อง ่ หากคุณตอบว่า ใช ่ ส าหร ับค าถามใด ๆ โปรดระบุรายละเอียดเพิมเติม ่ คุณอาจจ าเป็ นต ้องแนบเอกสารใบร ับรองแพทย ์เพิมเติม ่ เกียวกับอาการทางการแพทย ์ ่ ผลการตรวจ/ทดสอบ และรายละเอียดของการร ักษาใด ๆ ทีคุณได ้ร ับ ่',
+      },
+
+      generalQuestions: {
+        text: 'ค าถามท ัวไป',
+        yes: 'ใช่',
+        no: 'ไม่ใช่',
+
+        question1: '1. ในช ่วงสิบปีทีผ่านมา ่ คุณได ้ร ับการผ่าตัดหรือได ้ร ับค าแนะน าให ้เข ้าร ับการผ่าตัดหรือไม่?',
+        question2: '2. ในช ่วงสิบปีทีผ่านมา ่ คุณเข ้าร ับการร ักษาในโรงพยาบาลหรือไม่? หากใช ่ โปรดระบุเวลาและเหตุผล พร ้อมแนบรายงานทางการแพทย ์จากโรงพยาบาลและรายงานเกียวกับสภาพปัจจุบันของคุณ ่',
+        question3: '3. ปัจจุบันคุณทานยาเป็ นประจ าหรือเคยทานในช ่วง 10 ปีทีผ่านมาหรือไม่ ่ ? ถ ้าเคย โปรดระบุชือยาและเหตุผลที ่ ่ร ับประทาน',
+        question4: '4. คุณดืมแอลกอฮอล ์เป็ นประจ าหรือเคยดื ่ มมาก่อนหรือไม่ ่ ? ถ ้าเคย โปรดระบุว่าดืมชนิดใดและความถี ่ ่ เท่าใด',
+        question5: '5. คุณเสพยาหรือเคยเสพยามาก่อนหรือไม่?',
+        question6: '6. คุณเคยสูบบุหรี่ในช ่วง 20 ปีทีผ่านมาหรือไม่ ่ ?',
+        question7: '7. ในช ่วง 12 เดือนทีผ่านมา ่ คุณลดน ้าหนักได ้มากกว่า 5 กก. (นอกเหนือจากการควบคุมอาหาร) หรือไม่? หากเป็ นเช ่นนั้น โปรดระบุรายละเอียด',
+        question8: '8. คุณเคยผ่านการตรวจทางห ้องปฏิบัติการ เช ่น เลือดหรือปัสสาวะ (ทีมีผลผิดปกติ ่ ) หรือการทดสอบทางการแพทย ์ใดๆ รวมถึงการตรวจหลอดเลือด, การตรวจหัวใจด ้วยคลืนไฟฟ้ าหัวใจ ่ , การส่องกล ้อง, การทดสอบแบบ Invasive เพือตรวจหามะเร็ง ่ , การตรวจชินเนื ้ อ้ , ECG, เอ็กซเรย ์หรืออัลตราซาวด ์, สแกน, CT, MRI หรือไม่ ถ ้าใช ่โปรดระบุเหตุผล วันที่ และผลลัพธ ์',
+        question9: '9. คุณหรือเคยประสบภาวะไร ้ความสามารถทั้งหมดหรือบางส่วนในการท างานหรือไม่?',
+        question10: '10. คุณเป็ นผู ้ทุพพลภาพหรือไม่?',
+        question11: '11. คุณใช ้เครืองมือแพทย ์หรือไม่ ่?',
+        question12: '12. คุณมีความผิดปกติแต่ก าเนิดหรือไม่?',
+        question13: '13. คุณเป็ นโรคภูมิต ้านตนเอง รวมถึงโรคลูปัสหรือไม่?',
+        question14: '14. คุณก าลังรอร ับการร ักษาทางการแพทย ์หรือการร ักษาตัวในโรงพยาบาลอยู่หรือเปล่า?',
+        question15: '15. คุณเป็ นพาหะของแอนติบอดีและ/หรือไวร ัส HIV หรือไม่?',
+        question16: '<strong>16. นรีเวชวิทยา – เฉพาะผู ้หญิง:</strong><br>ก. คุณกา ลงัตั ้งครรภ?์',
+        question17: 'ข. คุณหรือเคยเป็ นโรคทางนรีเวช เช ่น ประจ าเดือนมาไม่ปกติภาวะมีบุตรยาก เลือดออกผิดปกติ โรคเกีย่ วกบั มดลกู ความผิดปกติของร ังไข่ ผลการตรวจทางนรเีวชทีผ่ ดิ ปกติ(เช ่น PAP) หรอืความผดิ ปกตทิ างนรเีวชอืน่ ๆ หรือไม่?',
+        question18: 'ค. คุณมคี วามผดิ ปกตขิ องเตา้นมหรอืมกี อ้นที เตา้นมหรอไม่ ื ?',
+        question19: 'ง. คุณเคยผ่านการผ่าตัดคลอดหรือไม่?',
+
+        text2: 'คุณหรอืเคยเป็นโรคหรอือาการดงัต่อไปนี้หรอืไม่?',
+        question20: '17. <strong>ความผิดปกติทางระบบประสาท</strong> – ได้แก่ อาการบ้านหมุน ปวดศีรษะ ไมเกรน เป็นลม อัมพาต โรคลมบ้าหมู ความผิดปกติของหน่วยความจำ ความผิดปกติของการประมวลผลทางประสาทสัมผัส โรคความเสื่อม โรคหลอดเลือดสมอง เลือดออกในสมอง ซีวีเอ สูญเสียการทรงตัว โรคอัลไซเมอร์ โรคพาร์กินสัน.',
+        question21: '18. <strong>ความผิดปกติทางจิตเวช</strong> – ความผิดปกติทุกประเภทหรือการพยายามฆ่าตัวตาย.',
+        question22: '19. <strong>อาการแพ้</strong> – โปรดระบุรายละเอียดของอาการแพ้และการรักษาใด ๆ ที่คุณได้รับ.',
+        question23: '20. <strong>ความผิดปกติของระบบทางเดินหายใจ</strong> – รวมถึงโรคหอบหืด วัณโรค ปอดอักเสบกำเริบ ซิสติกไฟโบรซิส หลอดลมอักเสบ ถุงลมโป่งพอง การติดเชื้อซ้ำในระบบทางเดินหายใจ ปอดอุดกั้นเรื้อรัง ปอดบวม.',
+        question24: '21. <strong>ความผิดปกติของหัวใจและความดันโลหิต</strong> – รวมถึงหลอดเลือดหัวใจตีบ หัวใจวาย หัวใจเต้นผิดจังหวะ โรคลิ้นหัวใจ โรคหัวใจพิการแต่กำเนิด เยื่อหุ้มหัวใจอักเสบ โรคหัวใจ ความดันโลหิตสูงหรือความดันโลหิตผันผวน.',
+        question25: '22. <strong>ความผิดปกติของหัวใจและหลอดเลือด</strong> – รวมถึงการแข็งตัวของเลือดมากเกินไป เส้นเลือดดำลึกอุดตัน เส้นเลือดขอด โรคหัวใจและหลอดเลือด โรคหลอดเลือดส่วนปลาย.',
+        question26: '23. <strong>ระบบย่อยอาหาร</strong> – รวมถึงแผลในกระเพาะอาหารหรือแผลในลำไส้เล็กส่วนต้น อาการแสบร้อนกลางอก โรคติดเชื้อในลำไส้ โรคโครห์น ลำไส้อักเสบเป็นแผล เลือดออกในทางเดินอาหาร ริดสีดวงทวาร ความผิดปกติของช่องทวารหนัก โรคตับหรือความผิดปกติของตับ ดีซ่าน การติดเชื้อในถุงน้ำดี นิ่วในถุงน้ำดี ความผิดปกติของหลอดอาหาร การติดเชื้อในตับอ่อน.',
+        question27: '24. <strong>ไส้เลื่อน</strong> – ทุกประเภท รวมถึงไส้เลื่อนแบบเกิดจากการผ่าตัด.',
+        question28: '25. <strong>การติดเชื้อในไตและทางเดินปัสสาวะ</strong> – รวมถึงนิ่วในไต การติดเชื้อหรือการอุดตันในไตหรือทางเดินปัสสาวะ เลือดหรือโปรตีนในปัสสาวะ โรคไตเรื้อรัง ซีสต์ในไต ปัญหาเกี่ยวกับต่อมลูกหมาก.',
+        question29: '26. <strong>ข้อต่อและกระดูก</strong> – รวมถึงโรคข้ออักเสบ โรคเกาต์ ปัญหาหลัง กระดูกสันหลัง เข่า และข้อต่ออื่น ๆ การผ่าตัดกระดูกหัก โรคกระดูก.',
+        question30: '27. <strong>การเผาผลาญและระบบภูมิคุ้มกัน</strong> – รวมถึงโรคเบาหวาน ความผิดปกติของต่อมไทรอยด์ ต่อมหมวกไต ต่อมใต้สมอง ต่อมน้ำเหลือง ต่อมน้ำลาย หรือต่อมอื่น ๆ ไขมันในเลือดสูง โรคเลือดหรือการแข็งตัวของเลือดผิดปกติ โรคโลหิตจาง.',
+        question31: '28. <strong>โรคร้าย (มะเร็ง)</strong> – รวมถึงเนื้องอกร้ายหรือก่อนมะเร็ง โปรดระบุชนิด วันที่วินิจฉัย และการรักษา.',
+        question32: '29. <strong>โรคผิวหนังและกามโรค</strong> – รวมถึงการเจริญเติบโตของผิวหนัง โรคสะเก็ดเงิน เริม ซิฟิลิส หูด ติ่งเนื้อ/หูดหงอนไก่.',
+        question33: '30. <strong>ความผิดปกติและโรคทางตา</strong> – รวมถึงต้อกระจก ตาเข ตาบอด ปัญหากระจกตาหรือเรตินา การมองเห็นบิดเบี้ยว สายตาเอียง ต้อหิน.',
+        question34: '31. <strong>หู คอ จมูก</strong> – รวมถึงการติดเชื้อซ้ำ ไซนัสอักเสบ ติ่งเนื้อ ต่อมทอนซิลอักเสบ การได้ยินผิดปกติ ภาวะหยุดหายใจขณะหลับ การนอนกรน.',
+
+        text3: 'โปรดใหข้ อ้มูลเพิม่ เตมิเกีย่ วกบั ค าถามใดๆ ทีค่ ุณตอบวา่ “ใช ่” หากมเีนือ้ ที ่ไม่พอ โปรดต่อในหนา้อืน่ และแนบเอกสารทางการแพทย ์ใดๆ',
+      },
+
+      infoProposer: {
+        text1: 'ข้อมูลส าหร ับผู ้ขอเอาประก ันภ ัย',
+        list1: '1. ตามเงือ่ นไขของกรมธรรม์สามารถต่ออายุกรมธรรม ์ได ้ภายใน 90 วัน หลังจากกรมธรรม ์หมดอายุ โดยขึน้ อยู่กบั การชา ระเบีย้ ประกนั ภยั ส าหรบั ระยะเวลาระหว่างกรมธรรมห์มดอายจุ นถงึวนั เริม่ ตน้ การต่ออายุ (สามารถช าระได ้โดยผู ้ประกันตนหรือนายจ ้าง) ตราบเท่าทีค่ ุณอาศยั อยู่ในอสิ ราเอลในฐานะแรงงานต่างชาติหลังจาก 90 วนั ผ่านไปนับตั ้งแตก่ รมธรรม ์หมดอายุ จะต ้องมีกระบวนการพิจารณาร ับประกันภัยทางการแพทย ์ใหม่<br>2. หากคุณประสบความทุพพลภาพใดๆ ตามทีก่ า หนดไวใ้นกฎหมายสทิ ธเิท่าเทยีมกนั ส าหรบั ผพู้ กิ าร – 1988 หมายความว่าคุณประสบความพิการทางร ่างกาย ความบกพร ่องทางจิตใจหรือสติปัญญา ไม่ว่าจะเป็นถาวรหรอืชั  ่วคราว ซึ ่งจา กดั การท างานของคุณในกจิกรรมประจา วนั โดยทั ่วไปอย่างรนุ แรง โปรดแจง้ตวัแทนประกนั ทีม่ รีายละเอยีดตามแบบฟอรม์นี ้',
+
+        text2: 'ประกาศของผู ้ขอเอาประก ันภ ัย',
+        list2: '1. ข้าพเจ้าขอประกาศ ตกลง และร ับรองว่า: (1) คา ตอบทั ้งหมดเป็นความจรงิ สมบูรณ์ และได ้ร ับการจัดเตรียมโดยเจตจ านงเสรีของข ้าพเจ ้าเอง (2) ค าตอบทีป่ รากฏในประกาศสขุ ภาพและขอ้มูลอืน่ ๆ ที ใหแ้กผ่ ูร้บั ประกนั ภยัพรอ้มกบั เงือ่ นไขมาตรฐานของผูร้บั ประกนั ในเรือ่ งนีถ้ อืเป็นขอ้กา หนดพืน้ ฐานของสญั ญาประกนั ภยั ระหว่างขา้พเจา้กบั ผูร้บั ประกนั ภยั และจะเป็นส่วนส าคัญของสัญญาประกันภัย. (3) ผูร้บั ประกนั ภยั มอีสิ ระในการตดั สนิใจวา่ จะยอมรบั หรอืปฏเิสธใบสมคั รนี ้โดยไม่ตอ้งพสิูจนก์ ารตดั สนิใจของตน ขา้พเจา้ทราบดวี่าสญั ญาประกนั ภยั จะมผี ลก็ต่อเมือ่ ผูร้บั ประกนั ภยั ยนื ยนั การยอมรบั ประกนั ภยัเป็นลายลกั ษณอ์กั ษร และหลงัจากชา ระเบีย้ ประกนภัยงวดแรกครบถ ้วนแล ้ว ั<br><br>2. ขา้พเจา้ทราบดวี่าตามนโยบายนี้ ผู ้ประกันตนจะได ้ร ับการยกเว ้นจากการให ้บริการใดๆ ที เกีย่ วขอ้งกบั ความผดิ ปกติ ความพิการแต่ก าเนิด หรือโรคทางกรรมพันธุ ์และ/หรือสภาวะทางการแพทย ์และ/หรือความเจ็บป่ วย และ/หรือโรค และผลกระทบของมัน ไม่ว่าจะได ้ร ับการร ักษาหรือ ไม่ไดเ้กดิ ขึน้ โดยตรงหรอืโดยออ้มจากและ/หรือแย่ลงจากอาการทางการแพทย ์ใด ๆ ทีข่ า้พเจา้ไดร้บั กอ่ นทีจ่ ะมกี ารจดั ท ากรมธรรมป์ระกนั ภยั โดยขึน้ อยู่กบั บทบญั ญตั ขิ องกฎหมายแรงงานตา่ งดา้วและขอ้กา หนดและเงือ่ นไขของกรมธรรม์<br><br>3. ข ้าพเจ ้าขอประกาศว่าข ้าพเจ ้าไม่เคยถกู ปฏเิสธการรบั ประกนั ภยั จากบรษิทั ประกนั ภยั อืน่ ใด<br><br>4. ขา้พเจา้ยนื ยนั ว่าขา้พเจา้ไดร้บั ขอ้มูลเกีย่ วกบั การประกนั ภยั รวมถึงค าอธิบายของความคุ ้มครองหลัก เบีย้ ประกนั ระยะเวลาประกันภัย จ านวนเงินเอาประกันภัยหลักและขีดจ ากัดความร ับผิด และความเป็นไปไดท้ีจ่ ะไดร้บั ขอ้ความในกรมธรรม ์ฉบับสมบูรณ์<br><br>5. การจดั นโยบายนีถ้ อื วา่ คณุ ใหส้ทิ ธิต์ วัแทนประกนั ของคณุ ในการส่งและรบั หนังสอื แจง้และ/หรือเอกสารใด ๆ ที เกีย่ วขอ้งกบั กระบวนการพจิารณารบั ประกนั ภยั และกระบวนการจดั ท านโยบายนี ในนามของคุณ / ส าหร ับคุณ<br><br>6. ข ้าพเจ ้าตกลงให ้ตัวแทนประกันภัยจัดส่งกรมธรรมป์ระกนั ภยั ทีม่ รีายละเอยีดในแบบฟอรม์นี ้ใหแ้กข่ า้พเจา้ หากคุณต ้องการได ้ร ับข ้อความในกรมธรรม ์ฉบับเต็มและ/หรอืขอ้มูลอืน่ ๆ ที เกีย่ วขอ้งกบั กระบวนการพจิารณารบั ประกนั และขัน้ ตอนการจดั ท ากรมธรรมน์ี ้โดยตรงจากบรษิทั ประกนั ภยั โปรดติดต่อเราได ้ตลอดเวลา<br><br>7. การสละสิทธิ ์ในการร ักษาความลับทางการแพทย ์ ขา้พเจา้ผูล้งนามขา้งทา้ยนี้ อนุญาตให ้องค ์กรดูแลสุขภาพ และ/หรือ สถาบันทางการแพทย ์และแพทย ์โรงพยาบาล หรอืสถานพยาบาลอืน่ ๆ และ/หรือ บริษัทประกันภัย และ/หรือ สถาบัน และ/หรือ นิติบุคคลใดๆ ในการจัดหาให ้กับ Ayalon Insurance Company Ltd. (ต่อไปนี: ้ “ บริษัทประกันภัย”)<br><br>ขอ้มูลทั ้งหมดโดยไม่มขี อ้ยกเวน้ และอยู่ในรปู แบบทีบ่ รษิทั ประกนั ภยั รอ้งขอเกีย่ วกบั อาการป่วยของขา้พเจา้ และ/หรือการเจ็บป่ วยหรืออาการป่ วยใดๆ ทีม่ ผี ลกระทบต่อขา้พเจา้ทั ้งในอดตี ปัจจุบัน หรืออนาคต และข ้าพเจ ้าขอยกเว ้นไม่ต ้องปฏิบัตหิ นา้ทีท่ างการแพทย์การรกั ษาความลบั และยกเวน้ บรษิทั ประกนั ภยั จากหนา้ทีน่ ีด้ ว้ย การสละสทิ ธิน์ีผ้ ูกพนั ขา้พเจา้ ทายาท และตัวแทนทางกฎหมายของข ้าพเจ ้า และผูใ้ดก็ตามที เขา้มาแทนที',
+      }
+    }
+  }
+}

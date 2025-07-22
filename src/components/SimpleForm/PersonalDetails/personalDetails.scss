@@ -1,0 +1,35 @@
+.personalDetails {
+  margin-bottom: 20px;
+  border: 1px solid;
+
+  &__text {
+    margin: 0;
+    background-color: #f2dbdb;
+    border-bottom: 1px solid;
+    padding: 5px 10px;
+    font-weight: 700;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+  }
+
+  &__label {
+    margin: 0 5px;
+
+    &--radio {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  &__input {
+    margin: 5px 10px;
+  }
+
+  &__legend {
+    padding: 0;
+  }
+}

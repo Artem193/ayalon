@@ -1,0 +1,58 @@
+.simpleForm {
+  margin-bottom: 30px;
+
+  &__title {
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #470028;
+    color: #FFFFFF;
+
+    @media (min-width: 1080px) {
+      font-size: 24px;
+    }
+  }
+
+  &__signatureBlock {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid;
+    padding: 5px 10px;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+  }
+
+  &__input {
+    margin: 5px 0;
+  }
+
+  &__canvas {
+    border: 1px solid;
+    margin: 5px 0;
+  }
+
+  &__clear {
+    width: 50px;
+    margin: 5px 0;
+  }
+
+  &__date {
+    width: 100px;
+  }
+
+  &__submit {
+    width: 100px;
+  }
+}
