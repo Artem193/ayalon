@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import './infoProposer.scss';
+import './in_foProposer.scss';
 
 export const InfoProposer = () => {
   const { t } = useTranslation();
