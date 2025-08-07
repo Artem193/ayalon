@@ -52,11 +52,11 @@ export const PersonalDetails = ({
           {t('personalDetails.passport')}
           <input
             className="personalDetails__input"
-            type="number"
+            type="text"
             value={passport}
             onChange={(e) => onChangePassport(e.target.value)}
             required
-            pattern="^\d$"
+            pattern="^[a-zA-Z0-9]+$"
           />
         </label>
 
