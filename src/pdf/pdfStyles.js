@@ -1,92 +1,92 @@
 export const pdfStyles = {
   en: {
-    surname: { x: 50, y: 690 },
-    firstName: { x: 160, y: 690 },
-    passport: { x: 260, y: 690 },
+    surname: { x: 50, y: 685 },
+    firstName: { x: 160, y: 685 },
+    passport: { x: 263, y: 685 },
     gender: { x: 353, y: 679 },
-    dateOfBirth: { x: 385, y: 690 },
-    weight: { x: 465, y: 690 },
-    height: { x: 522, y: 690 },
+    dateOfBirth: { x: 385, y: 685 },
+    weight: { x: 465, y: 685 },
+    height: { x: 522, y: 685 },
 
-    question1Yes: { x: 515, y: 550 },
-    question1No: { x: 542, y: 568 },
+    question1Yes: { x: 515, y: 551 },
+    question1No: { x: 542, y: 551 },
 
-    question2Yes: { x: 515, y: 550 },
-    question2No: { x: 542, y: 550 },
+    question2Yes: { x: 515, y: 533 },
+    question2No: { x: 542, y: 533 },
 
-    question3Yes: { x: 515, y: 525 },
-    question3No: { x: 542, y: 525 },
+    question3Yes: { x: 515, y: 512 },
+    question3No: { x: 542, y: 512 },
 
-    question4Yes: { x: 515, y: 501 },
-    question4No: { x: 542, y: 501 },
+    question4Yes: { x: 515, y: 486 },
+    question4No: { x: 542, y: 486 },
 
-    question5Yes: { x: 515, y: 482 },
-    question5No: { x: 542, y: 482 },
+    question5Yes: { x: 515, y: 465 },
+    question5No: { x: 542, y: 465 },
 
-    question6Yes: { x: 515, y: 468 },
-    question6No: { x: 542, y: 468 },
+    question6Yes: { x: 515, y: 452 },
+    question6No: { x: 542, y: 452 },
 
-    question7Yes: { x: 515, y: 455 },
-    question7No: { x: 542, y: 455 },
+    question7Yes: { x: 515, y: 439 },
+    question7No: { x: 542, y: 439 },
 
-    question8Yes: { x: 515, y: 430 },
-    question8No: { x: 542, y: 430 },
+    question8Yes: { x: 515, y: 414 },
+    question8No: { x: 542, y: 414 },
 
-    question9Yes: { x: 515, y: 405 },
-    question9No: { x: 542, y: 405 },
+    question9Yes: { x: 515, y: 389 },
+    question9No: { x: 542, y: 389 },
 
-    question10Yes: { x: 515, y: 391 },
-    question10No: { x: 542, y: 391 },
+    question10Yes: { x: 515, y: 375 },
+    question10No: { x: 542, y: 375 },
 
-    question11Yes: { x: 515, y: 377 },
-    question11No: { x: 542, y: 377 },
+    question11Yes: { x: 515, y: 361 },
+    question11No: { x: 542, y: 361 },
 
-    question12Yes: { x: 515, y: 363 },
-    question12No: { x: 542, y: 363 },
+    question12Yes: { x: 515, y: 347 },
+    question12No: { x: 542, y: 347 },
 
-    question13Yes: { x: 515, y: 350 },
-    question13No: { x: 542, y: 350 },
+    question13Yes: { x: 515, y: 334 },
+    question13No: { x: 542, y: 334 },
 
-    question14Yes: { x: 515, y: 335 },
-    question14No: { x: 542, y: 335 },
+    question14Yes: { x: 515, y: 319 },
+    question14No: { x: 542, y: 319 },
 
-    question15Yes: { x: 515, y: 322 },
-    question15No: { x: 542, y: 322 },
+    question15Yes: { x: 515, y: 306 },
+    question15No: { x: 542, y: 306 },
 
-    question16Yes: { x: 515, y: 295 },
-    question16No: { x: 542, y: 295 },
+    question16Yes: { x: 515, y: 279 },
+    question16No: { x: 542, y: 279 },
 
-    question17Yes: { x: 515, y: 270 },
-    question17No: { x: 542, y: 270 },
+    question17Yes: { x: 515, y: 254 },
+    question17No: { x: 542, y: 254 },
 
-    question18Yes: { x: 515, y: 245 },
-    question18No: { x: 542, y: 245 },
+    question18Yes: { x: 515, y: 229 },
+    question18No: { x: 542, y: 229 },
 
-    question19Yes: { x: 515, y: 231 },
-    question19No: { x: 542, y: 231 },
+    question19Yes: { x: 515, y: 215 },
+    question19No: { x: 542, y: 215 },
 
-    question20Yes: { x: 515, y: 180 },
-    question20No: { x: 542, y: 180 },
+    question20Yes: { x: 515, y: 164 },
+    question20No: { x: 542, y: 164 },
 
-    question21Yes: { x: 515, y: 154 },
-    question21No: { x: 542, y: 154 },
+    question21Yes: { x: 515, y: 138 },
+    question21No: { x: 542, y: 138 },
 
-    question22Yes: { x: 515, y: 140 },
-    question22No: { x: 542, y: 140 },
+    question22Yes: { x: 515, y: 124 },
+    question22No: { x: 542, y: 124 },
 
-    question23Yes: { x: 515, y: 121 },
-    question23No: { x: 542, y: 121 },
+    question23Yes: { x: 515, y: 105 },
+    question23No: { x: 542, y: 105 },
 
-    question24Yes: { x: 515, y: 98 },
-    question24No: { x: 542, y: 98 },
+    question24Yes: { x: 515, y: 82 },
+    question24No: { x: 542, y: 82 },
 
-    question25Yes: { x: 515, y: 70 },
-    question25No: { x: 542, y: 70 },
+    question25Yes: { x: 515, y: 54 },
+    question25No: { x: 542, y: 54 },
 
-    question26Yes: { x: 515, y: 40 },
-    question26No: { x: 542, y: 40 },
+    question26Yes: { x: 515, y: 34 },
+    question26No: { x: 542, y: 34 },
 
-    question27Yes: { x: 515, y: 788, page: 1 },
+    question27Yes: { x: 515, y: 798, page: 1 },
     question27No: { x: 542, y: 788, page: 1 },
 
     question28Yes: { x: 515, y: 770, page: 1 },
