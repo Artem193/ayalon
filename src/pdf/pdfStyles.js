@@ -7,8 +7,8 @@ export const pdfStyles = {
     weight: { x: 465, y: 685 },
     height: { x: 522, y: 685 },
 
-    genderM: { x: 360, y: 680, page: 0, width: 12, height: 1 },
-    genderF: { x: 392, y: 680, page: 0, width: 12, height: 1 },
+    genderM: { x: 360, y: 680, width: 12, height: 1 },
+    genderF: { x: 392, y: 680, width: 12, height: 1 },
 
     question1Yes: { x: 517, y: 551 },
     question1No: { x: 542, y: 551 },
