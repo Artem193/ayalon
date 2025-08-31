@@ -112,14 +112,14 @@ export const pdfStyles = {
 
     answerDescription: { x: 45, y: 615, page: 1, width: 500 },
 
-    signature2: { x: 470, y: 465, width: 75, height: 40, page: 1 },
+    signature2: { x: 470, y: 462, width: 75, height: 40, page: 1 },
     signature3: { x: 440, y: 650, width: 75, height: 40, page: 2 },
  
-    date1: { x: 150, y: 470, page: 1 },
-    date2: { x: 80, y: 660, page: 2 },
+    date1: { x: 150, y: 472, page: 1 },
+    date2: { x: 80, y: 665, page: 2 },
 
-    nameProposer1: { x: 230, y: 470, page: 1 },
-    nameProposer2: { x: 200, y: 660, page: 2 },
+    nameProposer1: { x: 230, y: 472, page: 1 },
+    nameProposer2: { x: 200, y: 665, page: 2 },
   },
 
   th: {
