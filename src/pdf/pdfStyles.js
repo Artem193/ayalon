@@ -1,14 +1,14 @@
 export const pdfStyles = {
   en: {
-    surname: { x: 44, y: 679 },
-    firstName: { x: 151, y: 679 },
-    passport: { x: 260, y: 679 },
+    surname: { x: 50, y: 690 },
+    firstName: { x: 160, y: 690 },
+    passport: { x: 260, y: 690 },
     gender: { x: 353, y: 679 },
-    dateOfBirth: { x: 385, y: 679 },
-    weight: { x: 465, y: 679 },
-    height: { x: 522, y: 679 },
+    dateOfBirth: { x: 385, y: 690 },
+    weight: { x: 465, y: 690 },
+    height: { x: 522, y: 690 },
 
-    question1Yes: { x: 515, y: 568 },
+    question1Yes: { x: 515, y: 550 },
     question1No: { x: 542, y: 568 },
 
     question2Yes: { x: 515, y: 550 },
