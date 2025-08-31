@@ -184,7 +184,6 @@ export const SimpleForm = () => {
             value={formData.nameProposer}
             onChange={(e) => updateField('nameProposer', e.target.value)}
             required
-            pattern="^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ]{2,}$"
           />
         </label>
       </div>

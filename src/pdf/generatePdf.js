@@ -1,4 +1,4 @@
-import { PDFDocument } from 'pdf-lib';
+import { PDFDocument, rgb } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit';
 import { pdfStyles } from './pdfStyles';
 
@@ -115,6 +115,22 @@ export async function generatePdf(language, formData, signatureDataUrl) {
         font: customFont,
       });
     });
+  }
+
+  if (formData.gender) {
+    const key = formData.gender === 'M' ? 'genderMLine' : 'genderFLine';
+    const st = styles[key];
+    if (st) {
+      const page = pages[st.page ?? 0];
+      page.drawRectangle({
+        x: st.x,
+        y: st.y,
+        width: st.width ?? 12,
+        height: st.height ?? 1,
+        color: rgb(0, 0, 0),
+        opacity: 1,
+      });
+    }
   }
 
   // 2. Отрисовка крестиков для 16 вопросов

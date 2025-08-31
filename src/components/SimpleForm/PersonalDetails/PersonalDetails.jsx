@@ -62,7 +62,7 @@ export const PersonalDetails = ({
 
         <fieldset className="personalDetails__label personalDetails__label--radio">
           <legend className='personalDetails__legend'>{t('personalDetails.gender')}</legend>
-          <label>
+          {/* <label>
             <input
               type="radio"
               name="gender"
@@ -79,6 +79,26 @@ export const PersonalDetails = ({
               value="F"
               checked={gender === t('personalDetails.female')}
               onChange={() => onChangeGender(t('personalDetails.female'))}
+              required
+            /> {t('personalDetails.female')}
+          </label> */}
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              value="M"
+              checked={gender === 'M'}
+              onChange={() => onChangeGender('M')}
+              required
+            /> {t('personalDetails.male')}
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              value="F"
+              checked={gender === 'F'}
+              onChange={() => onChangeGender('F')}
               required
             /> {t('personalDetails.female')}
           </label>

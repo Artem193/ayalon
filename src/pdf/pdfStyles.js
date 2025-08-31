@@ -3,10 +3,12 @@ export const pdfStyles = {
     surname: { x: 50, y: 685 },
     firstName: { x: 160, y: 685 },
     passport: { x: 263, y: 685 },
-    gender: { x: 353, y: 679 },
     dateOfBirth: { x: 385, y: 685 },
     weight: { x: 465, y: 685 },
     height: { x: 522, y: 685 },
+
+    genderM: { x: 360, y: 680, page: 0, width: 12, height: 1 },
+    genderF: { x: 392, y: 680, page: 0, width: 12, height: 1 },
 
     question1Yes: { x: 517, y: 551 },
     question1No: { x: 542, y: 551 },
@@ -39,7 +41,7 @@ export const pdfStyles = {
     question10No: { x: 542, y: 384 },
 
     question11Yes: { x: 517, y: 370 },
-    question11No: { x: 542, y: 370},
+    question11No: { x: 542, y: 370 },
 
     question12Yes: { x: 517, y: 356 },
     question12No: { x: 542, y: 356 },
@@ -114,7 +116,7 @@ export const pdfStyles = {
 
     signature2: { x: 470, y: 462, width: 75, height: 40, page: 1 },
     signature3: { x: 440, y: 650, width: 75, height: 40, page: 2 },
- 
+
     date1: { x: 150, y: 472, page: 1 },
     date2: { x: 80, y: 665, page: 2 },
 
