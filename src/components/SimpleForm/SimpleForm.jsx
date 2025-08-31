@@ -134,6 +134,8 @@ export const SimpleForm = () => {
         onChanHeight={(value) => updateField('height', value)}
       />
 
+      <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>
+
       <InfoBlock />
 
       <GeneralQuestions

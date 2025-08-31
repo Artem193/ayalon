@@ -16,6 +16,16 @@ export const InfoProposer = () => {
         <p className='infoProposer__text'>{t('infoProposer.text2')}</p>
         <li className='infoProposer__list' dangerouslySetInnerHTML={{ __html: t('infoProposer.list2') }}></li>
       </div>
+
+      <div className='infoProposer'>
+        <p className='infoProposer__text'>{t('infoProposer.text3')}</p>
+        <li className='infoProposer__list' dangerouslySetInnerHTML={{ __html: t('infoProposer.list3') }}></li>
+      </div>
+
+      <div className='infoProposer'>
+        <p className='infoProposer__text'>{t('infoProposer.text4')}</p>
+        <li className='infoProposer__list' dangerouslySetInnerHTML={{ __html: t('infoProposer.list4') }}></li>
+      </div>
     </>
   )
 }
