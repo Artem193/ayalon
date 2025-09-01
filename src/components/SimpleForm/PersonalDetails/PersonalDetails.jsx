@@ -32,7 +32,6 @@ export const PersonalDetails = ({
             value={surname}
             onChange={(e) => onChangeSurname(e.target.value)}
             required
-            pattern="^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ]{2,}$"
           />
         </label>
 
@@ -44,7 +43,6 @@ export const PersonalDetails = ({
             value={firstName}
             onChange={(e) => onChangeFirstName(e.target.value)}
             required
-            pattern="^[A-Za-zА-Яа-яЁёЇїІіЄєҐґ]{2,}$"
           />
         </label>
 
