@@ -372,4 +372,8 @@ export const pdfStyles = {
     nameProposer1: { x: 235, y: 547, page: 2 },
     nameProposer2: { x: 200, y: 590, page: 3 },
   },
+
+  extra: {
+    surname: { x: 65, y: 645 },
+  },
 };
