@@ -375,6 +375,6 @@ export const pdfStyles = {
   },
 
   extra: {
-    surname: { x: 65, y: 645 },
+    surname: { x: 60, y: 645 },
   },
 };
