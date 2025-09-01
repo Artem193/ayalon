@@ -5,6 +5,7 @@ import { languages } from './languages/languages.js'
 
 const resources = {
   en: languages.en,
+  cn: languages.cn,
   th: languages.th,
 };
 

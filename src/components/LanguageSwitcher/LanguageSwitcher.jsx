@@ -19,6 +19,7 @@ export const LanguageSwitcher = () => {
           onChange={handleChange}
         >
           <option value='en'>EN</option>
+          <option value='cn'>CN</option>
           <option value='th'>TH</option>
         </select>
       </div>
