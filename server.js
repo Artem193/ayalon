@@ -110,48 +110,75 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // 🟢 API: надсилання PDF
-app.post('/send-pdf', upload.fields([{ name: 'pdfEn' }, { name: 'pdfTh' }, { name: 'pdfCn' }]), async (req, res) => {
-  try {
-    const { surname } = req.body;
-    const pdfEn = req.files?.pdfEn?.[0];
-    const pdfTh = req.files?.pdfTh?.[0];
-    const pdfCn = req.files?.pdfCn?.[0];
+app.post(
+  '/send-pdf',
+  upload.fields([{ name: 'pdfEn' }, { name: 'pdfTh' }, { name: 'pdfCn' }]),
+  async (req, res) => {
+    try {
+      const { surname } = req.body;
+      const pdfEn = req.files?.pdfEn?.[0];
+      const pdfTh = req.files?.pdfTh?.[0];
+      const pdfCn = req.files?.pdfCn?.[0];
 
-    if (!pdfEn || !pdfTh || !pdfCn) return res.status(400).json({ message: 'Invalid input' });
-    if (pdfCn.mimetype !== 'application/pdf') return res.status(400).json({ message: 'Only PDF files are allowed' });
+      // 🔎 Діагностика: повертаємо що прийшло і не шлемо лист
+      if (req.query.dryRun === '1') {
+        return res.json({
+          surname,
+          received: [
+            { key: 'pdfEn', present: !!pdfEn, mimetype: pdfEn?.mimetype, size: pdfEn?.size },
+            { key: 'pdfTh', present: !!pdfTh, mimetype: pdfTh?.mimetype, size: pdfTh?.size },
+            { key: 'pdfCn', present: !!pdfCn, mimetype: pdfCn?.mimetype, size: pdfCn?.size },
+          ],
+        });
+      }
 
-    const transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+      // ✅ Валідація
+      if (!surname || typeof surname !== 'string') {
+        return res.status(400).json({ message: 'Invalid input: surname' });
+      }
+      if (!pdfEn || !pdfTh || !pdfCn) {
+        return res.status(400).json({ message: 'Invalid input: missing PDFs' });
+      }
+      const isPdf = (f) => f && f.mimetype === 'application/pdf';
+      if (!isPdf(pdfEn) || !isPdf(pdfTh) || !isPdf(pdfCn)) {
+        return res.status(400).json({ message: 'Only PDF files are allowed' });
+      }
 
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO,
-      subject: `New form submission from ${surname}`,
-      // text: 'Attached are the English and Thai PDFs. ',
-      text: `Attached are the English and Thai PDFs.
+      // ✉️ Транспортер
+      const transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      // 📎 Лист
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_TO,
+        subject: `New form submission from ${surname}`,
+        text: `Attached are the English, Thai and Chinese PDFs.
 קבוצת גלובל ח.פ.516936457
 מספר מעסיק 2104
 מספר הסכם 7652
 מספר סוכן 321720
 חיש סוכנות לביטוח`,
-      attachments: [
-        { filename: 'form_en.pdf', content: pdfEn.buffer },
-        { filename: 'form_th.pdf', content: pdfTh.buffer },
-        { filename: 'form_cn.pdf', content: pdfCn.buffer },
-      ],
-    });
+        attachments: [
+          { filename: 'form_en.pdf', content: pdfEn.buffer },
+          { filename: 'form_th.pdf', content: pdfTh.buffer },
+          { filename: 'form_cn.pdf', content: pdfCn.buffer },
+        ],
+      });
 
-    res.status(200).send('Emails sent successfully');
-  } catch (error) {
-    console.error('🔥 Backend error in /send-pdf:', error);
-    res.status(500).send('Email failed');
+      res.status(200).send('Emails sent successfully');
+    } catch (error) {
+      console.error('🔥 Backend error in /send-pdf:', error);
+      res.status(500).send('Email failed');
+    }
   }
-});
+);
+
 
 // 🔁 SPA-маршрути — після всіх API
 

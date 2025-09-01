@@ -255,7 +255,7 @@ export async function generatePdf(language, formData, signatureDataUrl) {
   const customFont = await pdfDoc.embedFont(fontBytes);
 
   const pages = pdfDoc.getPages();
-  const styles = pdfStyles[language];
+  const styles = pdfStyles[language] || pdfStyles.en;
 
   // 1. Вставка текстовых полей (исключая checkbox-вопросы)
   Object.entries(formData).forEach(([field, value]) => {
