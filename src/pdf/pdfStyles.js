@@ -314,8 +314,8 @@ export const pdfStyles = {
     question18Yes: { x: 507, y: 630, page: 1 },
     question18No: { x: 542, y: 630, page: 1 },
 
-    question19Yes: { x: 507, y: 613, page: 1 },
-    question19No: { x: 542, y: 613, page: 1 },
+    question19Yes: { x: 507, y: 611, page: 1 },
+    question19No: { x: 542, y: 611, page: 1 },
 
     question20Yes: { x: 507, y: 530, page: 1 },
     question20No: { x: 542, y: 530, page: 1 },
@@ -364,7 +364,7 @@ export const pdfStyles = {
 
     answerDescription: { x: 50, y: 623, page: 2, width: 500 },
 
-    signature2: { x: 460, y: 360, width: 75, height: 40, page: 2 },
+    signature2: { x: 460, y: 350, width: 75, height: 40, page: 2 },
     signature3: { x: 460, y: 230, width: 75, height: 40, page: 3 },
 
     date1: { x: 135, y: 375, page: 2 },
