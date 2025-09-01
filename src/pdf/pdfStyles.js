@@ -258,7 +258,7 @@ export const pdfStyles = {
     height: { x: 530, y: 645 },
     
     genderMLine: { x: 362, y: 645, width: 10, height: 1 },
-    genderFLine: { x: 367, y: 635, width: 10, height: 1 },
+    genderFLine: { x: 367, y: 628, width: 10, height: 1 },
 
     question1Yes: { x: 507, y: 475 },
     question1No: { x: 542, y: 475 },
@@ -272,11 +272,11 @@ export const pdfStyles = {
     question4Yes: { x: 507, y: 380 },
     question4No: { x: 542, y: 380 },
 
-    question5Yes: { x: 507, y: 353 },
-    question5No: { x: 542, y: 353 },
+    question5Yes: { x: 507, y: 352 },
+    question5No: { x: 542, y: 352 },
 
-    question6Yes: { x: 507, y: 335 },
-    question6No: { x: 542, y: 335 },
+    question6Yes: { x: 507, y: 334 },
+    question6No: { x: 542, y: 334 },
 
     question7Yes: { x: 507, y: 310 },
     question7No: { x: 542, y: 310 },
@@ -284,11 +284,11 @@ export const pdfStyles = {
     question8Yes: { x: 507, y: 245 },
     question8No: { x: 542, y: 245 },
 
-    question9Yes: { x: 507, y: 190 },
-    question9No: { x: 542, y: 190 },
+    question9Yes: { x: 507, y: 189 },
+    question9No: { x: 542, y: 189 },
 
-    question10Yes: { x: 507, y: 165 },
-    question10No: { x: 542, y: 165 },
+    question10Yes: { x: 507, y: 164 },
+    question10No: { x: 542, y: 164 },
 
     question11Yes: { x: 507, y: 130 },
     question11No: { x: 542, y: 130 },
@@ -296,17 +296,17 @@ export const pdfStyles = {
     question12Yes: { x: 507, y: 100 },
     question12No: { x: 542, y: 100 },
 
-    question13Yes: { x: 507, y: 70 },
-    question13No: { x: 542, y: 70 },
+    question13Yes: { x: 507, y: 69 },
+    question13No: { x: 542, y: 69 },
 
     question14Yes: { x: 507, y: 35 },
     question14No: { x: 542, y: 35 },
 
-    question15Yes: { x: 507, y: 755, page: 1 },
-    question15No: { x: 542, y: 755, page: 1 },
+    question15Yes: { x: 507, y: 757, page: 1 },
+    question15No: { x: 542, y: 757, page: 1 },
 
-    question16Yes: { x: 507, y: 725, page: 1 },
-    question16No: { x: 542, y: 725, page: 1 },
+    question16Yes: { x: 507, y: 705, page: 1 },
+    question16No: { x: 542, y: 705, page: 1 },
 
     question17Yes: { x: 507, y: 665, page: 1 },
     question17No: { x: 542, y: 665, page: 1 },
@@ -314,8 +314,8 @@ export const pdfStyles = {
     question18Yes: { x: 507, y: 630, page: 1 },
     question18No: { x: 542, y: 630, page: 1 },
 
-    question19Yes: { x: 507, y: 615, page: 1 },
-    question19No: { x: 542, y: 615, page: 1 },
+    question19Yes: { x: 507, y: 613, page: 1 },
+    question19No: { x: 542, y: 613, page: 1 },
 
     question20Yes: { x: 507, y: 530, page: 1 },
     question20No: { x: 542, y: 530, page: 1 },
@@ -338,8 +338,8 @@ export const pdfStyles = {
     question26Yes: { x: 507, y: 270, page: 1 },
     question26No: { x: 542, y: 270, page: 1 },
 
-    question27Yes: { x: 507, y: 220, page: 1 },
-    question27No: { x: 542, y: 220, page: 1 },
+    question27Yes: { x: 507, y: 218, page: 1 },
+    question27No: { x: 542, y: 218, page: 1 },
 
     question28Yes: { x: 507, y: 180, page: 1 },
     question28No: { x: 542, y: 180, page: 1 },
@@ -350,28 +350,28 @@ export const pdfStyles = {
     question30Yes: { x: 507, y: 90, page: 1 },
     question30No: { x: 542, y: 90, page: 1 },
 
-    question31Yes: { x: 507, y: 50, page: 1 },
-    question31No: { x: 542, y: 50, page: 1 },
+    question31Yes: { x: 507, y: 48, page: 1 },
+    question31No: { x: 542, y: 48, page: 1 },
 
     question32Yes: { x: 507, y: 760, page: 2 },
     question32No: { x: 542, y: 760, page: 2 },
 
-    question33Yes: { x: 507, y: 727, page: 2 },
-    question33No: { x: 542, y: 727, page: 2 },
+    question33Yes: { x: 507, y: 725, page: 2 },
+    question33No: { x: 542, y: 725, page: 2 },
 
     question34Yes: { x: 507, y: 690, page: 2 },
     question34No: { x: 542, y: 690, page: 2 },
 
-    answerDescription: { x: 50, y: 625, page: 2, width: 500 },
+    answerDescription: { x: 50, y: 623, page: 2, width: 500 },
 
-    signature2: { x: 460, y: 375, width: 75, height: 40, page: 2 },
-    signature3: { x: 460, y: 200, width: 75, height: 40, page: 3 },
+    signature2: { x: 460, y: 360, width: 75, height: 40, page: 2 },
+    signature3: { x: 460, y: 230, width: 75, height: 40, page: 3 },
 
-    date1: { x: 145, y: 390, page: 2 },
-    date2: { x: 90, y: 220, page: 3 },
+    date1: { x: 135, y: 375, page: 2 },
+    date2: { x: 90, y: 250, page: 3 },
 
-    nameProposer1: { x: 235, y: 390, page: 2 },
-    nameProposer2: { x: 200, y: 220, page: 3 },
+    nameProposer1: { x: 235, y: 375, page: 2 },
+    nameProposer2: { x: 200, y: 250, page: 3 },
   },
 
   extra: {
