@@ -252,7 +252,7 @@ export async function generatePdf(language, formData, signatureDataUrl) {
   pdfDoc.registerFontkit(fontkit);
   const fontUrl = FONTS[language] || FONTS.en;
   const fontBytes = await fetch(fontUrl).then((res) => res.arrayBuffer());
-  const customFont = await pdfDoc.embedFont(fontBytes);
+  const customFont = await pdfDoc.embedFont(fontBytes, { subset: true });
 
   const pages = pdfDoc.getPages();
   const styles = pdfStyles[language] || pdfStyles.en;
@@ -402,4 +402,3 @@ export async function generatePdf(language, formData, signatureDataUrl) {
   const pdfBytes = await pdfDoc.save();
   return new Blob([pdfBytes], { type: 'application/pdf' });
 }
-
