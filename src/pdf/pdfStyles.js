@@ -125,128 +125,128 @@ export const pdfStyles = {
   },
 
   cn: {
-    surname: { x: 50, y: 685 },
-    firstName: { x: 160, y: 685 },
-    passport: { x: 263, y: 685 },
-    dateOfBirth: { x: 385, y: 685 },
-    weight: { x: 465, y: 685 },
-    height: { x: 522, y: 685 },
+    surname: { x: 50, y: 665 },
+    firstName: { x: 160, y: 665 },
+    passport: { x: 263, y: 665 },
+    dateOfBirth: { x: 385, y: 665 },
+    weight: { x: 465, y: 665 },
+    height: { x: 522, y: 665 },
 
-    genderMLine: { x: 348, y: 685, width: 10, height: 1 },
-    genderFLine: { x: 363, y: 685, width: 10, height: 1 },
+    genderMLine: { x: 348, y: 665, width: 10, height: 1 },
+    genderFLine: { x: 358, y: 665, width: 10, height: 1 },
 
-    question1Yes: { x: 517, y: 551 },
-    question1No: { x: 542, y: 551 },
+    question1Yes: { x: 517, y: 571 },
+    question1No: { x: 542, y: 571 },
 
-    question2Yes: { x: 517, y: 533 },
-    question2No: { x: 542, y: 533 },
+    question2Yes: { x: 517, y: 553 },
+    question2No: { x: 542, y: 553 },
 
-    question3Yes: { x: 517, y: 510 },
-    question3No: { x: 542, y: 510 },
+    question3Yes: { x: 517, y: 530 },
+    question3No: { x: 542, y: 530 },
 
-    question4Yes: { x: 517, y: 488 },
-    question4No: { x: 542, y: 488 },
+    question4Yes: { x: 517, y: 508 },
+    question4No: { x: 542, y: 508 },
 
-    question5Yes: { x: 517, y: 475 },
-    question5No: { x: 542, y: 475 },
+    question5Yes: { x: 517, y: 495 },
+    question5No: { x: 542, y: 495 },
 
-    question6Yes: { x: 517, y: 460 },
-    question6No: { x: 542, y: 460 },
+    question6Yes: { x: 517, y: 480 },
+    question6No: { x: 542, y: 480 },
 
-    question7Yes: { x: 517, y: 446 },
-    question7No: { x: 542, y: 446 },
+    question7Yes: { x: 517, y: 466 },
+    question7No: { x: 542, y: 466 },
 
-    question8Yes: { x: 517, y: 420 },
-    question8No: { x: 542, y: 420 },
+    question8Yes: { x: 517, y: 440 },
+    question8No: { x: 542, y: 440 },
 
-    question9Yes: { x: 517, y: 397 },
-    question9No: { x: 542, y: 397 },
+    question9Yes: { x: 517, y: 417 },
+    question9No: { x: 542, y: 417 },
 
-    question10Yes: { x: 517, y: 384 },
-    question10No: { x: 542, y: 384 },
+    question10Yes: { x: 517, y: 404 },
+    question10No: { x: 542, y: 404 },
 
-    question11Yes: { x: 517, y: 370 },
-    question11No: { x: 542, y: 370 },
+    question11Yes: { x: 517, y: 390 },
+    question11No: { x: 542, y: 390 },
 
-    question12Yes: { x: 517, y: 356 },
-    question12No: { x: 542, y: 356 },
+    question12Yes: { x: 517, y: 376 },
+    question12No: { x: 542, y: 376 },
 
-    question13Yes: { x: 517, y: 341 },
-    question13No: { x: 542, y: 341 },
+    question13Yes: { x: 517, y: 361 },
+    question13No: { x: 542, y: 361 },
 
-    question14Yes: { x: 517, y: 328 },
-    question14No: { x: 542, y: 328 },
+    question14Yes: { x: 517, y: 348 },
+    question14No: { x: 542, y: 348 },
 
-    question15Yes: { x: 517, y: 315 },
-    question15No: { x: 542, y: 315 },
+    question15Yes: { x: 517, y: 335 },
+    question15No: { x: 542, y: 335 },
 
-    question16Yes: { x: 517, y: 287 },
-    question16No: { x: 542, y: 287 },
+    question16Yes: { x: 517, y: 307 },
+    question16No: { x: 542, y: 307 },
 
-    question17Yes: { x: 517, y: 260 },
-    question17No: { x: 542, y: 260 },
+    question17Yes: { x: 517, y: 280 },
+    question17No: { x: 542, y: 280 },
 
-    question18Yes: { x: 517, y: 237 },
-    question18No: { x: 542, y: 237 },
+    question18Yes: { x: 517, y: 257 },
+    question18No: { x: 542, y: 257 },
 
-    question19Yes: { x: 517, y: 222 },
-    question19No: { x: 542, y: 222 },
+    question19Yes: { x: 517, y: 242 },
+    question19No: { x: 542, y: 242 },
 
-    question20Yes: { x: 517, y: 167 },
-    question20No: { x: 542, y: 167 },
+    question20Yes: { x: 517, y: 187 },
+    question20No: { x: 542, y: 187 },
 
-    question21Yes: { x: 517, y: 146 },
-    question21No: { x: 542, y: 146 },
+    question21Yes: { x: 517, y: 166 },
+    question21No: { x: 542, y: 166 },
 
-    question22Yes: { x: 517, y: 133 },
-    question22No: { x: 542, y: 133 },
+    question22Yes: { x: 517, y: 153 },
+    question22No: { x: 542, y: 153 },
 
-    question23Yes: { x: 517, y: 110 },
-    question23No: { x: 542, y: 110 },
+    question23Yes: { x: 517, y: 130 },
+    question23No: { x: 542, y: 130 },
 
-    question24Yes: { x: 517, y: 85 },
-    question24No: { x: 542, y: 85 },
+    question24Yes: { x: 517, y: 105 },
+    question24No: { x: 542, y: 105 },
 
-    question25Yes: { x: 517, y: 64 },
-    question25No: { x: 542, y: 64 },
+    question25Yes: { x: 517, y: 84 },
+    question25No: { x: 542, y: 84 },
 
-    question26Yes: { x: 517, y: 35 },
-    question26No: { x: 542, y: 35 },
+    question26Yes: { x: 517, y: 55 },
+    question26No: { x: 542, y: 55 },
 
-    question27Yes: { x: 517, y: 802, page: 1 },
-    question27No: { x: 542, y: 802, page: 1 },
+    question27Yes: { x: 517, y: 45 },
+    question27No: { x: 542, y: 45 },
 
-    question28Yes: { x: 517, y: 780, page: 1 },
-    question28No: { x: 542, y: 780, page: 1 },
+    question28Yes: { x: 517, y: 30 },
+    question28No: { x: 542, y: 30 },
 
-    question29Yes: { x: 517, y: 765, page: 1 },
-    question29No: { x: 542, y: 765, page: 1 },
+    question29Yes: { x: 517, y: 785, page: 1 },
+    question29No: { x: 542, y: 785, page: 1 },
 
-    question30Yes: { x: 517, y: 743, page: 1 },
-    question30No: { x: 542, y: 743, page: 1 },
+    question30Yes: { x: 517, y: 763, page: 1 },
+    question30No: { x: 542, y: 763, page: 1 },
 
-    question31Yes: { x: 517, y: 718, page: 1 },
-    question31No: { x: 542, y: 718, page: 1 },
+    question31Yes: { x: 517, y: 738, page: 1 },
+    question31No: { x: 542, y: 738, page: 1 },
 
-    question32Yes: { x: 517, y: 705, page: 1 },
-    question32No: { x: 542, y: 705, page: 1 },
+    question32Yes: { x: 517, y: 725, page: 1 },
+    question32No: { x: 542, y: 725, page: 1 },
 
-    question33Yes: { x: 517, y: 683, page: 1 },
-    question33No: { x: 542, y: 683, page: 1 },
+    question33Yes: { x: 517, y: 703, page: 1 },
+    question33No: { x: 542, y: 703, page: 1 },
 
-    question34Yes: { x: 517, y: 657, page: 1 },
-    question34No: { x: 542, y: 657, page: 1 },
+    question34Yes: { x: 517, y: 677, page: 1 },
+    question34No: { x: 542, y: 677, page: 1 },
 
-    answerDescription: { x: 45, y: 615, page: 1, width: 500 },
+    answerDescription: { x: 45, y: 675, page: 1, width: 500 },
 
-    signature2: { x: 470, y: 462, width: 75, height: 40, page: 1 },
-    signature3: { x: 440, y: 650, width: 75, height: 40, page: 2 },
+    signature2: { x: 470, y: 522, width: 75, height: 40, page: 1 },
+    signature3: { x: 440, y: 660, width: 75, height: 40, page: 2 },
 
-    date1: { x: 150, y: 472, page: 1 },
-    date2: { x: 80, y: 665, page: 2 },
+    date1: { x: 150, y: 532, page: 1 },
+    date2: { x: 80, y: 765, page: 2 },
 
-    nameProposer1: { x: 230, y: 472, page: 1 },
-    nameProposer2: { x: 200, y: 665, page: 2 },
+    nameProposer1: { x: 230, y: 532, page: 1 },
+    nameProposer2: { x: 200, y: 765, page: 2 },
   },
 
   th: {
