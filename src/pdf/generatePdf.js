@@ -198,7 +198,7 @@ const TEMPLATES = {
 const FONTS = {
   en: '/fonts/NotoSans-Regular.ttf',
   th: '/fonts/NotoSansThai-Regular.ttf',
-  cn: '/fonts/NotoSansSC-Regular.otf',
+  cn: '/fonts/NotoSerifCJKsc-Regular.otf',
 };
 
 
