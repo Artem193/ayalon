@@ -97,22 +97,25 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-const upload = multer({
-  limits: {
-    fileSize: 5 * 1024 * 1024,
-  },
-});
-
+// 🟢 Додатковий парсер для FormData-текстових полів
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
 
-// 🟢 Статичні файли
+// 🟢 Завантаження файлів через multer
+const upload = multer({ limits: { fileSize: 5 * 1024 * 1024 } });
+
+// 🟢 Статика
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// 🟢 API: надсилання PDF
+// 🟢 Обробка форми
 app.post(
   '/send-pdf',
-  upload.fields([{ name: 'pdfEn' }, { name: 'pdfTh' }, { name: 'pdfCn' }]),
+  upload.fields([
+    { name: 'pdfEn' },
+    { name: 'pdfTh' },
+    { name: 'pdfCn' },
+  ]),
   async (req, res) => {
     try {
       const { surname } = req.body;
@@ -120,31 +123,27 @@ app.post(
       const pdfTh = req.files?.pdfTh?.[0];
       const pdfCn = req.files?.pdfCn?.[0];
 
-      // 🔎 Діагностика: повертаємо що прийшло і не шлемо лист
+      // 🧪 dryRun режим
       if (req.query.dryRun === '1') {
         return res.json({
           surname,
           received: [
-            { key: 'pdfEn', present: !!pdfEn, mimetype: pdfEn?.mimetype, size: pdfEn?.size },
-            { key: 'pdfTh', present: !!pdfTh, mimetype: pdfTh?.mimetype, size: pdfTh?.size },
-            { key: 'pdfCn', present: !!pdfCn, mimetype: pdfCn?.mimetype, size: pdfCn?.size },
+            { key: 'pdfEn', present: !!pdfEn, size: pdfEn?.size },
+            { key: 'pdfTh', present: !!pdfTh, size: pdfTh?.size },
+            { key: 'pdfCn', present: !!pdfCn, size: pdfCn?.size },
           ],
         });
       }
 
-      // ✅ Валідація
+      // ✅ Перевірка вхідних даних
       if (!surname || typeof surname !== 'string') {
-        return res.status(400).json({ message: 'Invalid input: surname' });
+        return res.status(400).json({ message: 'Missing surname' });
       }
       if (!pdfEn || !pdfTh || !pdfCn) {
-        return res.status(400).json({ message: 'Invalid input: missing PDFs' });
-      }
-      const isPdf = (f) => f && f.mimetype === 'application/pdf';
-      if (!isPdf(pdfEn) || !isPdf(pdfTh) || !isPdf(pdfCn)) {
-        return res.status(400).json({ message: 'Only PDF files are allowed' });
+        return res.status(400).json({ message: 'Missing one or more PDFs' });
       }
 
-      // ✉️ Транспортер
+      // ✉️ Налаштування транспорту
       const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -153,7 +152,7 @@ app.post(
         },
       });
 
-      // 📎 Лист
+      // 📤 Відправка листа
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
         to: process.env.EMAIL_TO,
@@ -179,9 +178,7 @@ app.post(
   }
 );
 
-
-// 🔁 SPA-маршрути — після всіх API
-
+// 🟢 Запуск
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`✅ Backend running on http://localhost:${PORT}`);
