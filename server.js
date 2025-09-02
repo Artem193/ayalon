@@ -172,7 +172,8 @@ app.post(
 
       res.status(200).send('Emails sent successfully');
     } catch (error) {
-      console.error('🔥 Backend error in /send-pdf:', error);
+      console.error('🔥 Backend error in /send-pdf:', error.message);
+      console.error(error.stack);
       res.status(500).send('Email failed');
     }
   }
