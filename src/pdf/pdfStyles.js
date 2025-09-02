@@ -132,121 +132,121 @@ export const pdfStyles = {
     weight: { x: 465, y: 665 },
     height: { x: 522, y: 665 },
 
-    genderMLine: { x: 348, y: 665, width: 10, height: 1 },
-    genderFLine: { x: 358, y: 665, width: 10, height: 1 },
+    genderMLine: { x: 345, y: 663, width: 10, height: 1 },
+    genderFLine: { x: 358, y: 663, width: 10, height: 1 },
 
-    question1Yes: { x: 517, y: 571 },
-    question1No: { x: 542, y: 571 },
+    question1Yes: { x: 517, y: 572 },
+    question1No: { x: 542, y: 572 },
 
     question2Yes: { x: 517, y: 553 },
     question2No: { x: 542, y: 553 },
 
-    question3Yes: { x: 517, y: 530 },
-    question3No: { x: 542, y: 530 },
+    question3Yes: { x: 517, y: 531 },
+    question3No: { x: 542, y: 531 },
 
-    question4Yes: { x: 517, y: 508 },
-    question4No: { x: 542, y: 508 },
+    question4Yes: { x: 517, y: 517 },
+    question4No: { x: 542, y: 517 },
 
-    question5Yes: { x: 517, y: 495 },
-    question5No: { x: 542, y: 495 },
+    question5Yes: { x: 517, y: 405 },
+    question5No: { x: 542, y: 405 },
 
-    question6Yes: { x: 517, y: 480 },
-    question6No: { x: 542, y: 480 },
+    question6Yes: { x: 517, y: 490 },
+    question6No: { x: 542, y: 490 },
 
-    question7Yes: { x: 517, y: 466 },
-    question7No: { x: 542, y: 466 },
+    question7Yes: { x: 517, y: 476 },
+    question7No: { x: 542, y: 476 },
 
-    question8Yes: { x: 517, y: 440 },
-    question8No: { x: 542, y: 440 },
+    question8Yes: { x: 517, y: 450 },
+    question8No: { x: 542, y: 450 },
 
-    question9Yes: { x: 517, y: 417 },
-    question9No: { x: 542, y: 417 },
+    question9Yes: { x: 517, y: 420 },
+    question9No: { x: 542, y: 420 },
 
-    question10Yes: { x: 517, y: 404 },
-    question10No: { x: 542, y: 404 },
+    question10Yes: { x: 517, y: 406 },
+    question10No: { x: 542, y: 406 },
 
-    question11Yes: { x: 517, y: 390 },
-    question11No: { x: 542, y: 390 },
+    question11Yes: { x: 517, y: 392 },
+    question11No: { x: 542, y: 392 },
 
-    question12Yes: { x: 517, y: 376 },
-    question12No: { x: 542, y: 376 },
+    question12Yes: { x: 517, y: 379 },
+    question12No: { x: 542, y: 379 },
 
-    question13Yes: { x: 517, y: 361 },
-    question13No: { x: 542, y: 361 },
+    question13Yes: { x: 517, y: 365 },
+    question13No: { x: 542, y: 365 },
 
-    question14Yes: { x: 517, y: 348 },
-    question14No: { x: 542, y: 348 },
+    question14Yes: { x: 517, y: 351 },
+    question14No: { x: 542, y: 351 },
 
-    question15Yes: { x: 517, y: 335 },
-    question15No: { x: 542, y: 335 },
+    question15Yes: { x: 517, y: 337 },
+    question15No: { x: 542, y: 337 },
 
-    question16Yes: { x: 517, y: 307 },
-    question16No: { x: 542, y: 307 },
+    question16Yes: { x: 517, y: 309 },
+    question16No: { x: 542, y: 309 },
 
-    question17Yes: { x: 517, y: 280 },
-    question17No: { x: 542, y: 280 },
+    question17Yes: { x: 517, y: 288 },
+    question17No: { x: 542, y: 288 },
 
-    question18Yes: { x: 517, y: 257 },
-    question18No: { x: 542, y: 257 },
+    question18Yes: { x: 517, y: 268 },
+    question18No: { x: 542, y: 268 },
 
-    question19Yes: { x: 517, y: 242 },
-    question19No: { x: 542, y: 242 },
+    question19Yes: { x: 517, y: 254 },
+    question19No: { x: 542, y: 254 },
 
-    question20Yes: { x: 517, y: 187 },
-    question20No: { x: 542, y: 187 },
+    question20Yes: { x: 517, y: 203 },
+    question20No: { x: 542, y: 203 },
 
-    question21Yes: { x: 517, y: 166 },
-    question21No: { x: 542, y: 166 },
+    question21Yes: { x: 517, y: 180 },
+    question21No: { x: 542, y: 180 },
 
-    question22Yes: { x: 517, y: 153 },
-    question22No: { x: 542, y: 153 },
+    question22Yes: { x: 517, y: 167 },
+    question22No: { x: 542, y: 167 },
 
-    question23Yes: { x: 517, y: 130 },
-    question23No: { x: 542, y: 130 },
+    question23Yes: { x: 517, y: 143 },
+    question23No: { x: 542, y: 143 },
 
-    question24Yes: { x: 517, y: 105 },
-    question24No: { x: 542, y: 105 },
+    question24Yes: { x: 517, y: 117 },
+    question24No: { x: 542, y: 117 },
 
-    question25Yes: { x: 517, y: 84 },
-    question25No: { x: 542, y: 84 },
+    question25Yes: { x: 517, y: 95 },
+    question25No: { x: 542, y: 95 },
 
-    question26Yes: { x: 517, y: 55 },
-    question26No: { x: 542, y: 55 },
+    question26Yes: { x: 517, y: 75 },
+    question26No: { x: 542, y: 75 },
 
-    question27Yes: { x: 517, y: 45 },
-    question27No: { x: 542, y: 45 },
+    question27Yes: { x: 517, y: 53 },
+    question27No: { x: 542, y: 53 },
 
-    question28Yes: { x: 517, y: 30 },
-    question28No: { x: 542, y: 30 },
+    question28Yes: { x: 517, y: 32 },
+    question28No: { x: 542, y: 32 },
 
-    question29Yes: { x: 517, y: 785, page: 1 },
-    question29No: { x: 542, y: 785, page: 1 },
+    question29Yes: { x: 517, y: 787, page: 1 },
+    question29No: { x: 542, y: 787, page: 1 },
 
-    question30Yes: { x: 517, y: 763, page: 1 },
-    question30No: { x: 542, y: 763, page: 1 },
+    question30Yes: { x: 517, y: 765, page: 1 },
+    question30No: { x: 542, y: 765, page: 1 },
 
-    question31Yes: { x: 517, y: 738, page: 1 },
-    question31No: { x: 542, y: 738, page: 1 },
+    question31Yes: { x: 517, y: 742, page: 1 },
+    question31No: { x: 542, y: 742, page: 1 },
 
-    question32Yes: { x: 517, y: 725, page: 1 },
-    question32No: { x: 542, y: 725, page: 1 },
+    question32Yes: { x: 517, y: 728, page: 1 },
+    question32No: { x: 542, y: 728, page: 1 },
 
-    question33Yes: { x: 517, y: 703, page: 1 },
-    question33No: { x: 542, y: 703, page: 1 },
+    question33Yes: { x: 517, y: 715, page: 1 },
+    question33No: { x: 542, y: 715, page: 1 },
 
-    question34Yes: { x: 517, y: 677, page: 1 },
-    question34No: { x: 542, y: 677, page: 1 },
+    question34Yes: { x: 517, y: 699, page: 1 },
+    question34No: { x: 542, y: 699, page: 1 },
 
     answerDescription: { x: 45, y: 675, page: 1, width: 500 },
 
-    signature2: { x: 470, y: 522, width: 75, height: 40, page: 1 },
-    signature3: { x: 440, y: 660, width: 75, height: 40, page: 2 },
+    signature2: { x: 470, y: 520, width: 75, height: 40, page: 1 },
+    signature3: { x: 440, y: 740, width: 75, height: 40, page: 2 },
 
-    date1: { x: 150, y: 532, page: 1 },
-    date2: { x: 80, y: 765, page: 2 },
+    date1: { x: 140, y: 530, page: 1 },
+    date2: { x: 80, y: 777, page: 2 },
 
-    nameProposer1: { x: 230, y: 532, page: 1 },
-    nameProposer2: { x: 200, y: 765, page: 2 },
+    nameProposer1: { x: 230, y: 530, page: 1 },
+    nameProposer2: { x: 200, y: 777, page: 2 },
   },
 
   th: {
