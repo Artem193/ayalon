@@ -207,8 +207,8 @@ export const pdfStyles = {
     question24Yes: { x: 517, y: 120 },
     question24No: { x: 542, y: 120 },
 
-    question25Yes: { x: 517, y: 98 },
-    question25No: { x: 542, y: 98 },
+    question25Yes: { x: 517, y: 102 },
+    question25No: { x: 542, y: 102 },
 
     question26Yes: { x: 517, y: 77 },
     question26No: { x: 542, y: 77 },
@@ -225,14 +225,14 @@ export const pdfStyles = {
     question30Yes: { x: 517, y: 765, page: 1 },
     question30No: { x: 542, y: 765, page: 1 },
 
-    question31Yes: { x: 517, y: 744, page: 1 },
-    question31No: { x: 542, y: 744, page: 1 },
+    question31Yes: { x: 517, y: 745, page: 1 },
+    question31No: { x: 542, y: 745, page: 1 },
 
     question32Yes: { x: 517, y: 731, page: 1 },
     question32No: { x: 542, y: 731, page: 1 },
 
-    question33Yes: { x: 517, y: 717, page: 1 },
-    question33No: { x: 542, y: 717, page: 1 },
+    question33Yes: { x: 517, y: 718, page: 1 },
+    question33No: { x: 542, y: 718, page: 1 },
 
     question34Yes: { x: 517, y: 703, page: 1 },
     question34No: { x: 542, y: 703, page: 1 },
