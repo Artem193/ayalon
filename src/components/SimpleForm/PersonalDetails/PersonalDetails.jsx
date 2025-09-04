@@ -19,6 +19,8 @@ export const PersonalDetails = ({
   onChanHeight,
   status,
   onChangeStatus,
+  purposeOfVisit,
+  onChangePurposeOfVisit,
 }) => {
   const { t } = useTranslation();
 
@@ -123,6 +125,19 @@ export const PersonalDetails = ({
           <legend className='personalDetails__legend'>{t('personalDetails.status')}</legend>
           <label>
             <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="status"
+              value="new"
+              checked={status === 'new'}
+              onChange={() => onChangeStatus('new')}
+              required
+            /> {t('personalDetails.new')}
+          </label>
+
+          <label>
+            <input
+              className="personalDetails__input--radio"
               type="radio"
               name="status"
               value="renewal"
@@ -131,15 +146,68 @@ export const PersonalDetails = ({
               required
             /> {t('personalDetails.renewal')}
           </label>
+        </fieldset>
+
+        <fieldset className="personalDetails__label personalDetails__label--radio">
+          <legend className='personalDetails__legend'>{t('personalDetails.purposeOfVisit')}</legend>
           <label>
             <input
+              className="personalDetails__input--radio"
               type="radio"
-              name="status"
-              value="new"
-              checked={status === 'new'}
-              onChange={() => onChangeStatus('new')}
+              name="purposeOfVisit"
+              value="nursing"
+              checked={purposeOfVisit === 'nursing'}
+              onChange={() => onChangePurposeOfVisit('nursing')}
               required
-            /> {t('personalDetails.new')}
+            /> {t('personalDetails.nursing')}
+          </label>
+
+          <label>
+            <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="purposeOfVisit"
+              value="agriculture"
+              checked={purposeOfVisit === 'agriculture'}
+              onChange={() => onChangePurposeOfVisit('agriculture')}
+              required
+            /> {t('personalDetails.agriculture')}
+          </label>
+
+          <label>
+            <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="purposeOfVisit"
+              value="construction"
+              checked={purposeOfVisit === 'construction'}
+              onChange={() => onChangePurposeOfVisit('construction')}
+              required
+            /> {t('personalDetails.construction')}
+          </label>
+
+          <label>
+            <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="purposeOfVisit"
+              value="industry"
+              checked={purposeOfVisit === 'industry'}
+              onChange={() => onChangePurposeOfVisit('industry')}
+              required
+            /> {t('personalDetails.industry')}
+          </label>
+
+          <label>
+            <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="purposeOfVisit"
+              value="other"
+              checked={purposeOfVisit === 'other'}
+              onChange={() => onChangePurposeOfVisit('other')}
+              required
+            /> {t('personalDetails.other')}
           </label>
         </fieldset>
       </div>

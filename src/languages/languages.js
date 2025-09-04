@@ -40,6 +40,13 @@ export const languages = {
         status: '8. Status of insurance',
         renewal: 'Renewal/Update',
         new: 'New insurance',
+
+        purposeOfVisit: '9. The purpose of coming to Israel:',
+        nursing: 'Nursing care',
+        agriculture: 'Agriculture',
+        construction: 'Construction',
+        industry: 'Industry',
+        other: 'Other',
       },
 
       infoBlock: {

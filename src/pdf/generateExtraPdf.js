@@ -35,6 +35,51 @@ export async function generateExtraPdf(formData) {
     });
   }
 
+  if (formData.purposeOfVisit === 'nursing' && styles.nursing) {
+    page.drawText('X', {
+      x: styles.nursing.x,
+      y: styles.nursing.y,
+      size: 12,
+      font,
+    });
+  }
+
+  if (formData.purposeOfVisit === 'agriculture' && styles.agriculture) {
+    page.drawText('X', {
+      x: styles.agriculture.x,
+      y: styles.agriculture.y,
+      size: 12,
+      font,
+    });
+  }
+
+  if (formData.purposeOfVisit === 'construction' && styles.construction) {
+    page.drawText('X', {
+      x: styles.construction.x,
+      y: styles.construction.y,
+      size: 12,
+      font,
+    });
+  }
+
+  if (formData.purposeOfVisit === 'industry' && styles.industry) {
+    page.drawText('X', {
+      x: styles.industry.x,
+      y: styles.industry.y,
+      size: 12,
+      font,
+    });
+  }
+
+  if (formData.purposeOfVisit === 'other' && styles.other) {
+    page.drawText('X', {
+      x: styles.other.x,
+      y: styles.other.y,
+      size: 12,
+      font,
+    });
+  }
+
   const pdfBytes = await pdfDoc.save();
   return new Blob([pdfBytes], { type: 'application/pdf' });
 }
