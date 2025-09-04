@@ -36,6 +36,10 @@ export const languages = {
 
         male: 'M',
         female: 'F',
+
+        status: '8. Status of insurance',
+        renewal: 'Renewal/Update',
+        new: 'New insurance',
       },
 
       infoBlock: {

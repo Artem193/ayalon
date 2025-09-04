@@ -17,6 +17,8 @@ export const PersonalDetails = ({
   onChanWeight,
   height,
   onChanHeight,
+  status,
+  onChangeStatus,
 }) => {
   const { t } = useTranslation();
 
@@ -116,6 +118,30 @@ export const PersonalDetails = ({
             pattern="^\d$"
           />
         </label>
+
+        <fieldset className="personalDetails__label personalDetails__label--radio">
+          <legend className='personalDetails__legend'>{t('personalDetails.status')}</legend>
+          <label>
+            <input
+              type="radio"
+              name="status"
+              value="renewal"
+              checked={status === 'renewal'}
+              onChange={() => onChangeStatus('renewal')}
+              required
+            /> {t('personalDetails.renewal')}
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="status"
+              value="new"
+              checked={status === 'new'}
+              onChange={() => onChangeStatus('new')}
+              required
+            /> {t('personalDetails.new')}
+          </label>
+        </fieldset>
       </div>
     </div>
   );

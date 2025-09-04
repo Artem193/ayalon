@@ -26,6 +26,7 @@
 //     answerDescription: '',
 //     date: '',
 //     nameProposer: '',
+//     status: '',
 //   };
 
 //   // генерация пустых вопросов
@@ -78,14 +79,16 @@
 //       // Затем получить PNG
 //       const signatureDataUrl = canvasRef.current.toDataURL('image/png');
 
-//       const [pdfEn, pdfTh] = await Promise.all([
+//       const [pdfEn, pdfTh, pdfCn] = await Promise.all([
 //         generatePdf('en', formData, signatureDataUrl),
 //         generatePdf('th', formData, signatureDataUrl),
+//         generatePdf('cn', formData, signatureDataUrl),
 //       ]);
 
 //       const formDataToSend = new FormData();
 //       formDataToSend.append('pdfEn', new File([pdfEn], 'form_en.pdf', { type: 'application/pdf' }));
 //       formDataToSend.append('pdfTh', new File([pdfTh], 'form_th.pdf', { type: 'application/pdf' }));
+//       formDataToSend.append('pdfCn', new File([pdfCn], 'form_cn.pdf', { type: 'application/pdf' }));
 
 //       Object.entries(formData).forEach(([key, value]) => {
 //         formDataToSend.append(key, value);
@@ -132,6 +135,8 @@
 //         onChanWeight={(value) => updateField('weight', value)}
 //         height={formData.height}
 //         onChanHeight={(value) => updateField('height', value)}
+//         status={formData.status}
+//         onChangeStatus={(value) => updateField('status', value)}
 //       />
 
 //       <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>
@@ -204,6 +209,7 @@ import { useRef, useState, useEffect } from 'react';
 import SignaturePad from 'signature_pad';
 
 import { generatePdf } from '../../pdf/generatePdf';
+import { generateExtraPdf } from '../../pdf/generateExtraPdf';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import { PersonalDetails } from './PersonalDetails/PersonalDetails';
 import { InfoBlock } from './InfoBlock/InfoBlock';
@@ -227,6 +233,7 @@ export const SimpleForm = () => {
     answerDescription: '',
     date: '',
     nameProposer: '',
+    status: '',
   };
 
   // генерация пустых вопросов
@@ -279,16 +286,19 @@ export const SimpleForm = () => {
       // Затем получить PNG
       const signatureDataUrl = canvasRef.current.toDataURL('image/png');
 
-      const [pdfEn, pdfTh, pdfCn] = await Promise.all([
+      const [pdfEn, pdfTh, pdfCn, pdfExtra] = await Promise.all([
         generatePdf('en', formData, signatureDataUrl),
         generatePdf('th', formData, signatureDataUrl),
         generatePdf('cn', formData, signatureDataUrl),
+        generateExtraPdf(formData, signatureDataUrl),
       ]);
 
       const formDataToSend = new FormData();
       formDataToSend.append('pdfEn', new File([pdfEn], 'form_en.pdf', { type: 'application/pdf' }));
       formDataToSend.append('pdfTh', new File([pdfTh], 'form_th.pdf', { type: 'application/pdf' }));
       formDataToSend.append('pdfCn', new File([pdfCn], 'form_cn.pdf', { type: 'application/pdf' }));
+      formDataToSend.append('pdfExtra', new File([pdfExtra], 'form_extra.pdf', { type: 'application/pdf' }));
+
 
       Object.entries(formData).forEach(([key, value]) => {
         formDataToSend.append(key, value);
@@ -335,6 +345,8 @@ export const SimpleForm = () => {
         onChanWeight={(value) => updateField('weight', value)}
         height={formData.height}
         onChanHeight={(value) => updateField('height', value)}
+        status={formData.status}
+        onChangeStatus={(value) => updateField('status', value)}
       />
 
       <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>

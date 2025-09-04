@@ -256,7 +256,7 @@ export const pdfStyles = {
     dateOfBirth: { x: 398, y: 645 },
     weight: { x: 470, y: 645 },
     height: { x: 530, y: 645 },
-    
+
     genderMLine: { x: 362, y: 645, width: 10, height: 1 },
     genderFLine: { x: 367, y: 628, width: 10, height: 1 },
 
@@ -375,6 +375,7 @@ export const pdfStyles = {
   },
 
   extra: {
-    surname: { x: 65, y: 645 },
-  },
+    statusNew: { x: 65, y: 645 },
+    statusRenewal: { x: 65, y: 625 },
+  }
 };
