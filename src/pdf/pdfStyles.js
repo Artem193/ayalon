@@ -376,19 +376,19 @@ export const pdfStyles = {
 
   extra: {
     statusNew: { x: 560, y: 727 },
-    statusRenewal: { x: 460, y: 727 },
+    statusRenewal: { x: 428, y: 727 },
 
-    nursing: { x: 560, y: 700 },
+    nursing: { x: 560, y: 699 },
     agriculture: { x: 460, y: 700 },
     construction: { x: 360, y: 700 },
     industry: { x: 260, y: 700 },
     other: { x: 160, y: 700 },
 
-    foreignWorker: { x: 557, y: 653 },
-    touristMedical: { x: 557, y: 632 },
+    foreignWorker: { x: 556, y: 654 },
+    touristMedical: { x: 556, y: 632 },
 
-    periodRequestedFrom: { x: 270, y: 615 },
-    periodRequestedUp: { x: 120, y: 615},
+    periodRequestedFrom: { x: 270, y: 614 },
+    periodRequestedUp: { x: 120, y: 614},
 
     passport: { x: 470, y: 575 },
   }

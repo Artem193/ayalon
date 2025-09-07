@@ -98,7 +98,7 @@ export async function generateExtraPdf(formData) {
     });
   }
 
-  ['periodRequestedFrom', 'periodRequestedUp'].forEach((key) => {
+  ['periodRequestedFrom', 'periodRequestedUp', 'passport'].forEach((key) => {
     if (formData[key] && styles[key]) {
       page.drawText(formData[key], {
         x: styles[key].x,
