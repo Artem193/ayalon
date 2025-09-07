@@ -177,6 +177,10 @@ export const SimpleForm = () => {
         onChangeFromDate={(value) => updateField('fromDate', value)}
         upToDate={formData.upToDate}
         onChangeUpToDate={(value) => updateField('upToDate', value)}
+        contactName={formData.contactName}
+        onChangeContactName={(value) => updateField('contactName', value)}
+        contactPhone={formData.contactPhone}
+        onChangeContactPhone={(value) => updateField('contactPhone', value)}
       />
 
       <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>

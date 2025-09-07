@@ -74,6 +74,9 @@ export const languages = {
         membershipNo: 'Membership No',
         fromDate: 'From date',
         upToDate: 'Up to date',
+
+        contactName: 'Contact person name',
+        contactPhone: 'Contact person phone',
       },
 
       infoBlock: {

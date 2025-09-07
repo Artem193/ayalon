@@ -53,6 +53,10 @@ export const PersonalDetails = ({
   onChangeFromDate,
   upToDate,
   onChangeUpToDate,
+  contactName,
+  onChangeContactName,
+  contactPhone,
+  onChangeContactPhone,
 }) => {
   const { t } = useTranslation();
 
@@ -452,6 +456,26 @@ export const PersonalDetails = ({
             type="date"
             value={upToDate}
             onChange={(e) => onChangeUpToDate(e.target.value)}
+          />
+        </label>
+
+         <label className="personalDetails__label">
+          {t('personalDetails.contactName')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={contactName}
+            onChange={(e) => onChangeContactName(e.target.value)}
+          />
+        </label>
+
+         <label className="personalDetails__label">
+          {t('personalDetails.contactPhone')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={contactPhone}
+            onChange={(e) => onChangeContactPhone(e.target.value)}
           />
         </label>
       </div>
