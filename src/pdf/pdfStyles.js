@@ -408,13 +408,13 @@ export const pdfStyles = {
     zipCode: { x: 40, y: 475 },
 
     yes: { x: 557, y: 445 },
-    no: { x: 506, y: 445 },
+    no: { x: 508, y: 445 },
     insuranceCo: { x: 130, y: 460 },
     membershipNo: { x: 130, y: 445 },
     fromDate: { x: 185, y: 432 },
     upToDate: { x: 40, y: 432 },
 
-    passport2: { x: 460, y: 375 },
+    passport1: { x: 460, y: 375 },
     surname2: { x: 350, y: 375 },
     firstName2: { x: 250, y: 375 },
     contactName: { x: 150, y: 375 },
