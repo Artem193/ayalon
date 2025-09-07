@@ -35,9 +35,6 @@ export async function generateExtraPdf(formData) {
     'membershipNo',
     'fromDate',
     'upToDate',
-    'passport2',
-    'surname2',
-    'firstName2',
     'contactName',
     'contactPhone',
   ]

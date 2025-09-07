@@ -84,15 +84,28 @@ export async function generatePdf(language, formData, signatureDataUrl) {
       return;
     }
 
-    const style = styles[field];
-    const page = pages[style.page ?? 0]; // по умолчанию первая страница
+    const styleDef = styles[field];
 
-    page.drawText(value, {
-      x: style.x,
-      y: style.y,
-      size: style.size || 9,
-      font: customFont,
-    });
+    if (Array.isArray(styleDef)) {
+      // 🔁 Якщо масив координат
+      styleDef.forEach(({ x, y, page: p = 0, size }) => {
+        pages[p].drawText(value, {
+          x,
+          y,
+          size: size || 9,
+          font: customFont,
+        });
+      });
+    } else {
+      // 🧍 Одинарне значення, як раніше
+      const page = pages[styleDef.page ?? 0];
+      page.drawText(value, {
+        x: styleDef.x,
+        y: styleDef.y,
+        size: styleDef.size || 9,
+        font: customFont,
+      });
+    }
   });
 
   // 1.0 nameProposer — отрисовка в двух местах
@@ -105,23 +118,6 @@ export async function generatePdf(language, formData, signatureDataUrl) {
 
       const page = pages[style.page ?? 0];
       page.drawText(formData.nameProposer, {
-        x: style.x,
-        y: style.y,
-        size: style.size || 9,
-        font: customFont,
-      });
-    });
-  }
-
-  if (formData.passport) {
-    const passportPositions = ['passport1', 'passport2']; // ← ключи в pdfStyles
-
-    passportPositions.forEach((key) => {
-      const style = styles[key];
-      if (!style) return;
-
-      const page = pages[style.page ?? 0];
-      page.drawText(formData.passport, {
         x: style.x,
         y: style.y,
         size: style.size || 9,
