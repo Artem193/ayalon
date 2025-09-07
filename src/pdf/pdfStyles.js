@@ -385,7 +385,7 @@ export const pdfStyles = {
     other: { x: 160, y: 699 },
 
     foreignWorker: { x: 557, y: 654 },
-    touristMedical: { x: 557, y: 632 },
+    touristMedical: { x: 557, y: 634 },
 
     periodRequestedFrom: { x: 270, y: 613 },
     periodRequestedUp: { x: 120, y: 613},

@@ -31,6 +31,10 @@ export async function generateExtraPdf(formData) {
     'street',
     'town',
     'zipCode',
+    'insuranceCo',
+    'membershipNo',
+    'fromDate',
+    'upToDate',
   ]
 
   // 🔲 Вставка status (галочка)
