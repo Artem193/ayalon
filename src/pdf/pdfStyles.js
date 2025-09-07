@@ -381,11 +381,11 @@ export const pdfStyles = {
     nursing: { x: 560, y: 699 },
     agriculture: { x: 460, y: 699 },
     construction: { x: 360, y: 699 },
-    industry: { x: 260, y: 699 },
+    industry: { x: 265, y: 699 },
     other: { x: 160, y: 699 },
 
-    foreignWorker: { x: 556, y: 654 },
-    touristMedical: { x: 556, y: 632 },
+    foreignWorker: { x: 557, y: 654 },
+    touristMedical: { x: 557, y: 632 },
 
     periodRequestedFrom: { x: 270, y: 613 },
     periodRequestedUp: { x: 120, y: 613},
@@ -394,8 +394,8 @@ export const pdfStyles = {
     surname: { x: 350, y: 553 },
     firstName: { x: 250, y: 553 },
     dateOfBirth: { x: 150, y: 553 },
-    M: { x: 88, y: 553 },
-    F: { x: 40, y: 553 },
+    M: { x: 90, y: 552 },
+    F: { x: 40, y: 552 },
 
     countryOfBirth: { x: 460, y: 515 },
     israelEntryDay: { x: 250, y: 515 },
@@ -406,5 +406,12 @@ export const pdfStyles = {
     street: { x: 210, y: 475 },
     town: { x: 124, y: 475 },
     zipCode: { x: 40, y: 475 },
+
+    yes: { x: 557, y: 445 },
+    no: { x: 502, y: 445 },
+    insuranceCo: { x: 130, y: 460 },
+    membershipNo: { x: 130, y: 445 },
+    fromDate: { x: 165, y: 430 },
+    upToDate: { x: 40, y: 430 },
   }
 };

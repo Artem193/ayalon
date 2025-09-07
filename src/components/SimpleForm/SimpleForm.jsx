@@ -167,6 +167,16 @@ export const SimpleForm = () => {
         onChangeTown={(value) => updateField('town', value)}
         zipCode={formData.zipCode}
         onChangeZipCode={(value) => updateField('zipCode', value)}
+        previousIns={formData.previousIns}
+        onChangePreviousIns={(value) => updateField('previousIns', value)}
+        insuranceCo={formData.insuranceCo}
+        onChangeInsuranceCo={(value) => updateField('insuranceCo', value)}
+        membershipNo={formData.membershipNo}
+        onChangeMembershipNo={(value) => updateField('membershipNo', value)}
+        fromDate={formData.fromDate}
+        onChangeFromDate={(value) => updateField('fromDate', value)}
+        upToDate={formData.upToDate}
+        onChangeUpToDate={(value) => updateField('upToDate', value)}
       />
 
       <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>

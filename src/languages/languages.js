@@ -66,6 +66,14 @@ export const languages = {
         street: 'street, house no.',
         town: 'Town',
         zipCode: 'Zip code',
+
+        previousIns: '18. Previous Insurances in Israel',
+        yes: 'Yes',
+        no: 'No',
+        insuranceCo: 'Insurance Co',
+        membershipNo: 'Membership No',
+        fromDate: 'From date',
+        upToDate: 'Up to date',
       },
 
       infoBlock: {

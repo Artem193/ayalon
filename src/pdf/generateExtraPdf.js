@@ -133,6 +133,24 @@ export async function generateExtraPdf(formData) {
     });
   }
 
+  if (formData.previousIns === 'yes' && styles.yes) {
+    page.drawText('X', {
+      x: styles.yes.x,
+      y: styles.yes.y,
+      size: 12,
+      font,
+    });
+  }
+
+  if (formData.previousIns === 'no' && styles.no) {
+    page.drawText('X', {
+      x: styles.no.x,
+      y: styles.no.y,
+      size: 12,
+      font,
+    });
+  }
+
   inputs.forEach((key) => {
     if (formData[key] && styles[key]) {
       page.drawText(formData[key], {

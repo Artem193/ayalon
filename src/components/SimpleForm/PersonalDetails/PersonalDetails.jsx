@@ -43,6 +43,16 @@ export const PersonalDetails = ({
   onChangeTown,
   zipCode,
   onChangeZipCode,
+  previousIns,
+  onChangePreviousIns,
+  insuranceCo,
+  onChangeInsuranceCo,
+  membershipNo,
+  onChangeMembershipNo,
+  fromDate,
+  onChangeFromDate,
+  upToDate,
+  onChangeUpToDate,
 }) => {
   const { t } = useTranslation();
 
@@ -375,6 +385,73 @@ export const PersonalDetails = ({
             value={zipCode}
             onChange={(e) => onChangeZipCode(e.target.value)}
             required
+          />
+        </label>
+
+        <fieldset className="personalDetails__label personalDetails__label--radio">
+          <legend className='personalDetails__legend'>{t('personalDetails.previousIns')}</legend>
+          <label>
+            <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="previousIns"
+              value="yes"
+              checked={previousIns === 'yes'}
+              onChange={() => onChangePreviousIns('yes')}
+              required
+            /> {t('personalDetails.yes')}
+          </label>
+
+          <label>
+            <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="previousIns"
+              value="no"
+              checked={previousIns === 'no'}
+              onChange={() => onChangePreviousIns('no')}
+              required
+            /> {t('personalDetails.no')}
+          </label>
+        </fieldset>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.insuranceCo')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={insuranceCo}
+            onChange={(e) => onChangeInsuranceCo(e.target.value)}
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.membershipNo')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={membershipNo}
+            onChange={(e) => onChangeMembershipNo(e.target.value)}
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.fromDate')}
+          <input
+            className="personalDetails__input"
+            type="date"
+            value={fromDate}
+            onChange={(e) => onChangeFromDate(e.target.value)}
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.upToDate')}
+          <input
+            className="personalDetails__input"
+            type="date"
+            value={upToDate}
+            onChange={(e) => onChangeUpToDate(e.target.value)}
           />
         </label>
       </div>
