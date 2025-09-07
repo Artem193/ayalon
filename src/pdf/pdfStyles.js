@@ -404,7 +404,7 @@ export const pdfStyles = {
     mobile: { x: 460, y: 475 },
     anotherPhone: { x: 350, y: 475 },
     street: { x: 210, y: 475 },
-    town: { x: 125, y: 475 },
+    town: { x: 124, y: 475 },
     zipCode: { x: 40, y: 475 },
   }
 };
