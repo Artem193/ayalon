@@ -113,6 +113,23 @@ export async function generatePdf(language, formData, signatureDataUrl) {
     });
   }
 
+  if (formData.passport) {
+    const passportPositions = ['passport1', 'passport2']; // ← ключи в pdfStyles
+
+    passportPositions.forEach((key) => {
+      const style = styles[key];
+      if (!style) return;
+
+      const page = pages[style.page ?? 0];
+      page.drawText(formData.passport, {
+        x: style.x,
+        y: style.y,
+        size: style.size || 9,
+        font: customFont,
+      });
+    });
+  }
+
   if (formData.date) {
     const namePositions = ['date1', 'date2']; // ← ключи в pdfStyles
 

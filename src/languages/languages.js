@@ -75,8 +75,8 @@ export const languages = {
         fromDate: 'From date',
         upToDate: 'Up to date',
 
-        contactName: 'Contact person name',
-        contactPhone: 'Contact person phone',
+        contactName: '19. Contact person name',
+        contactPhone: '20. Contact person phone',
       },
 
       infoBlock: {
