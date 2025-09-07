@@ -96,23 +96,6 @@ export async function generatePdf(language, formData, signatureDataUrl) {
   });
 
   // 1.0 nameProposer — отрисовка в двух местах
-  if (formData.passport) {
-    const namePositions = ['passport', 'passport1']; // ← ключи в pdfStyles
-
-    namePositions.forEach((key) => {
-      const style = styles[key];
-      if (!style) return;
-
-      const page = pages[style.page ?? 0];
-      page.drawText(formData.passport, {
-        x: style.x,
-        y: style.y,
-        size: style.size || 9,
-        font: customFont,
-      });
-    });
-  }
-
   if (formData.nameProposer) {
     const namePositions = ['nameProposer1', 'nameProposer2']; // ← ключи в pdfStyles
 

@@ -159,11 +159,14 @@ export async function generateExtraPdf(formData) {
 
   inputs.forEach((key) => {
     if (formData[key] && styles[key]) {
-      page.drawText(formData[key], {
-        x: styles[key].x,
-        y: styles[key].y,
-        size: 10,
-        font,
+      const entries = Array.isArray(styles[key]) ? styles[key] : [styles[key]];
+      entries.forEach(({ x, y }) => {
+        page.drawText(formData[key], {
+          x,
+          y,
+          size: 10,
+          font,
+        });
       });
     }
   });
