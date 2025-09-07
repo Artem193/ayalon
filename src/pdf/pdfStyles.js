@@ -391,24 +391,49 @@ export const pdfStyles = {
     periodRequestedUp: { x: 120, y: 613 },
 
     passport: [
-      { x: 460, y: 553 }, // перше місце
-      { x: 460, y: 375 }, // друге місце
+      { x: 460, y: 553 },
+      { x: 460, y: 375 },
     ],
-    surname: { x: 350, y: 553 },
-    firstName: { x: 250, y: 553 },
+    surname: [
+      { x: 350, y: 553 },
+      { x: 350, y: 375 },
+    ],
+    firstName: [
+      { x: 250, y: 553 },
+      { x: 250, y: 375 },
+    ],
     dateOfBirth: { x: 150, y: 553 },
     M: { x: 87, y: 552 },
     F: { x: 56, y: 552 },
 
     countryOfBirth: { x: 460, y: 515 },
     israelEntryDay: { x: 250, y: 515 },
-    eMail: { x: 40, y: 515 },
+    eMail: [
+      { x: 40, y: 515 },
+      { x: 40, y: 345 },
+    ],
 
-    mobile: { x: 460, y: 475 },
-    anotherPhone: { x: 350, y: 475 },
-    street: { x: 210, y: 475 },
-    town: { x: 124, y: 475 },
-    zipCode: { x: 40, y: 475 },
+    mobile: [
+      { x: 460, y: 475 },
+      { x: 440, y: 345 },
+    ],
+    anotherPhone: [
+      { x: 350, y: 475 },
+      { x: 300, y: 345 },
+    ],
+    street: [
+      { x: 210, y: 475 },
+      { x: 440, y: 315 },
+    ],
+    town: [
+      { x: 124, y: 475 },
+      { x: 340, y: 315 },
+    ],
+    zipCode: [
+      { x: 40, y: 475 },
+      { x: 40, y: 315 },
+    ],
+    
 
     yes: { x: 557, y: 445 },
     no: { x: 508, y: 445 },
@@ -417,9 +442,6 @@ export const pdfStyles = {
     fromDate: { x: 185, y: 432 },
     upToDate: { x: 40, y: 432 },
 
-    // passport1: { x: 460, y: 375 },
-    // surname2: { x: 350, y: 375 },
-    // firstName2: { x: 250, y: 375 },
     contactName: { x: 150, y: 375 },
     contactPhone: { x: 40, y: 375 },
   }
