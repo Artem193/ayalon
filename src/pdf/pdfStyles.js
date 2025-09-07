@@ -388,12 +388,9 @@ export const pdfStyles = {
     touristMedical: { x: 556, y: 634 },
 
     periodRequestedFrom: { x: 270, y: 613 },
-    periodRequestedUp: { x: 120, y: 613 },
+    periodRequestedUp: { x: 120, y: 613},
 
-    passport: [
-      { x: 460, y: 553, page: 0 },
-      { x: 460, y: 375, page: 0 },
-    ],
+    passport: { x: 460, y: 553 },
     surname: { x: 350, y: 553 },
     firstName: { x: 250, y: 553 },
     dateOfBirth: { x: 150, y: 553 },
@@ -411,7 +408,7 @@ export const pdfStyles = {
     zipCode: { x: 40, y: 475 },
 
     yes: { x: 557, y: 445 },
-    no: { x: 508, y: 445 },
+    no: { x: 506, y: 445 },
     insuranceCo: { x: 130, y: 460 },
     membershipNo: { x: 130, y: 445 },
     fromDate: { x: 185, y: 432 },

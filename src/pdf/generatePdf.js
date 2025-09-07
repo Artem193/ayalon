@@ -84,28 +84,15 @@ export async function generatePdf(language, formData, signatureDataUrl) {
       return;
     }
 
-    const styleDef = styles[field];
+    const style = styles[field];
+    const page = pages[style.page ?? 0]; // по умолчанию первая страница
 
-    if (Array.isArray(styleDef)) {
-      // 🔁 Якщо масив координат
-      styleDef.forEach(({ x, y, page: p = 0, size }) => {
-        pages[p].drawText(value, {
-          x,
-          y,
-          size: size || 9,
-          font: customFont,
-        });
-      });
-    } else {
-      // 🧍 Одинарне значення, як раніше
-      const page = pages[styleDef.page ?? 0];
-      page.drawText(value, {
-        x: styleDef.x,
-        y: styleDef.y,
-        size: styleDef.size || 9,
-        font: customFont,
-      });
-    }
+    page.drawText(value, {
+      x: style.x,
+      y: style.y,
+      size: style.size || 9,
+      font: customFont,
+    });
   });
 
   // 1.0 nameProposer — отрисовка в двух местах
