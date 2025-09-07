@@ -98,6 +98,17 @@ export async function generateExtraPdf(formData) {
     });
   }
 
+  ['periodRequestedFrom', 'periodRequestedUp'].forEach((key) => {
+    if (formData[key] && styles[key]) {
+      page.drawText(formData[key], {
+        x: styles[key].x,
+        y: styles[key].y,
+        size: 10,
+        font,
+      });
+    }
+  });
+
   const pdfBytes = await pdfDoc.save();
   return new Blob([pdfBytes], { type: 'application/pdf' });
 }

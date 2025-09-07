@@ -47,9 +47,14 @@ export const languages = {
         construction: 'Construction',
         industry: 'Industry',
         other: 'Other',
+
         program: '10. Insurance program wanted',
         foreignWorker: 'Policy for Foreign worker with permit to work in Israel',
         touristMedical: 'Tourist Medical Insurance',
+        
+        periodRequested: '11. Insurance period requested',
+        periodRequestedFrom: 'From date',
+        periodRequestedUp: 'Up to Date',
       },
 
       infoBlock: {

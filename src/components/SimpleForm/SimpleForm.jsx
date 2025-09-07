@@ -147,6 +147,10 @@ export const SimpleForm = () => {
         onChangePurposeOfVisit={(value) => updateField('purposeOfVisit', value)}
         program={formData.program}
         onChangeProgram={(value) => updateField('program', value)}
+        periodRequestedFrom={formData.periodRequestedFrom}
+        onChangePeriodRequestedFrom={(value) => updateField('periodRequestedFrom', value)}
+        periodRequestedUp={formData.periodRequestedUp}
+        onChangePeriodRequestedUp={(value) => updateField('periodRequestedUp', value)}
       />
 
       <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>

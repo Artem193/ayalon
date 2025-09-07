@@ -23,6 +23,10 @@ export const PersonalDetails = ({
   onChangePurposeOfVisit,
   program,
   onChangeProgram,
+  periodRequestedFrom,
+  onChangePeriodRequestedFrom,
+  periodRequestedUp,
+  onChangePeriodRequestedUp,
 }) => {
   const { t } = useTranslation();
 
@@ -239,6 +243,32 @@ export const PersonalDetails = ({
             /> {t('personalDetails.touristMedical')}
           </label>
         </fieldset>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.periodRequested')}
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.periodRequestedFrom')}
+          <input
+            className="personalDetails__input"
+            type="date"
+            value={periodRequestedFrom}
+            onChange={(e) => onChangePeriodRequestedFrom(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.periodRequestedUp')}
+          <input
+            className="personalDetails__input"
+            type="date"
+            value={periodRequestedUp}
+            onChange={(e) => onChangePeriodRequestedUp(e.target.value)}
+            required
+          />
+        </label>
       </div>
     </div>
   );

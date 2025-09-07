@@ -375,15 +375,19 @@ export const pdfStyles = {
   },
 
   extra: {
-    statusNew: { x: 560, y: 725 },
-    statusRenewal: { x: 460, y: 725 },
+    statusNew: { x: 560, y: 727 },
+    statusRenewal: { x: 460, y: 727 },
 
-    nursing: { x: 560, y: 695 },
-    agriculture: { x: 460, y: 695 },
-    construction: { x: 360, y: 695 },
-    industry: { x: 260, y: 695 },
-    other: { x: 160, y: 695 },
-    foreignWorker: { x: 560, y: 645 },
-    touristMedical: { x: 560, y: 625 },
+    nursing: { x: 560, y: 700 },
+    agriculture: { x: 460, y: 700 },
+    construction: { x: 360, y: 700 },
+    industry: { x: 260, y: 700 },
+    other: { x: 160, y: 700 },
+
+    foreignWorker: { x: 555, y: 655 },
+    touristMedical: { x: 555, y: 632 },
+
+    periodRequestedFrom: { x: 270, y: 600 },
+    periodRequestedUp: { x: 120, y: 600},
   }
 };
