@@ -98,7 +98,25 @@ export async function generateExtraPdf(formData) {
     });
   }
 
-  ['periodRequestedFrom', 'periodRequestedUp', 'passport'].forEach((key) => {
+  if (formData.gender === 'M' && styles.M) {
+    page.drawText('X', {
+      x: styles.M.x,
+      y: styles.M.y,
+      size: 12,
+      font,
+    });
+  }
+
+  if (formData.gender === 'F' && styles.F) {
+    page.drawText('X', {
+      x: styles.F.x,
+      y: styles.F.y,
+      size: 12,
+      font,
+    });
+  }
+
+  ['periodRequestedFrom', 'periodRequestedUp', 'passport', 'surname', 'firstName', 'dateOfBirth'].forEach((key) => {
     if (formData[key] && styles[key]) {
       page.drawText(formData[key], {
         x: styles[key].x,

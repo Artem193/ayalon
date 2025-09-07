@@ -376,7 +376,7 @@ export const pdfStyles = {
 
   extra: {
     statusNew: { x: 560, y: 727 },
-    statusRenewal: { x: 428, y: 727 },
+    statusRenewal: { x: 433, y: 727 },
 
     nursing: { x: 560, y: 699 },
     agriculture: { x: 460, y: 700 },
@@ -384,12 +384,17 @@ export const pdfStyles = {
     industry: { x: 260, y: 700 },
     other: { x: 160, y: 700 },
 
-    foreignWorker: { x: 556, y: 654 },
-    touristMedical: { x: 556, y: 632 },
+    foreignWorker: { x: 557, y: 654 },
+    touristMedical: { x: 557, y: 632 },
 
-    periodRequestedFrom: { x: 270, y: 614 },
-    periodRequestedUp: { x: 120, y: 614},
+    periodRequestedFrom: { x: 270, y: 613 },
+    periodRequestedUp: { x: 120, y: 613},
 
-    passport: { x: 470, y: 575 },
+    passport: { x: 470, y: 553 },
+    surname: { x: 350, y: 553 },
+    firstName: { x: 250, y: 553 },
+    dateOfBirth: { x: 150, y: 553 },
+    M: { x: 118, y: 553 },
+    F: { x: 75, y: 553 },
   }
 };
