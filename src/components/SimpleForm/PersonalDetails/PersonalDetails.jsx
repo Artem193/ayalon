@@ -21,6 +21,8 @@ export const PersonalDetails = ({
   onChangeStatus,
   purposeOfVisit,
   onChangePurposeOfVisit,
+  program,
+  onChangeProgram,
 }) => {
   const { t } = useTranslation();
 
@@ -208,6 +210,33 @@ export const PersonalDetails = ({
               onChange={() => onChangePurposeOfVisit('other')}
               required
             /> {t('personalDetails.other')}
+          </label>
+        </fieldset>
+
+        <fieldset className="personalDetails__label personalDetails__label--radio">
+          <legend className='personalDetails__legend'>{t('personalDetails.program')}</legend>
+          <label>
+            <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="program"
+              value="foreignWorker"
+              checked={program === 'foreignWorker'}
+              onChange={() => onChangeProgram('foreignWorker')}
+              required
+            /> {t('personalDetails.foreignWorker')}
+          </label>
+
+          <label>
+            <input
+              className="personalDetails__input--radio"
+              type="radio"
+              name="program"
+              value="touristMedical"
+              checked={program === 'touristMedical'}
+              onChange={() => onChangeProgram('touristMedical')}
+              required
+            /> {t('personalDetails.touristMedical')}
           </label>
         </fieldset>
       </div>

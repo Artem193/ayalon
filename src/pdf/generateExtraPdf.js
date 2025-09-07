@@ -80,6 +80,24 @@ export async function generateExtraPdf(formData) {
     });
   }
 
+  if (formData.program === 'foreignWorker' && styles.foreignWorker) {
+    page.drawText('X', {
+      x: styles.foreignWorker.x,
+      y: styles.foreignWorker.y,
+      size: 12,
+      font,
+    });
+  }
+
+  if (formData.program === 'touristMedical' && styles.touristMedical) {
+    page.drawText('X', {
+      x: styles.touristMedical.x,
+      y: styles.touristMedical.y,
+      size: 12,
+      font,
+    });
+  }
+
   const pdfBytes = await pdfDoc.save();
   return new Blob([pdfBytes], { type: 'application/pdf' });
 }

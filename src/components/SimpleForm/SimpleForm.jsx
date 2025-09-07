@@ -29,6 +29,7 @@ export const SimpleForm = () => {
     nameProposer: '',
     status: '',
     purposeOfVisit: '',
+    program: '',
   };
 
   // генерация пустых вопросов
@@ -144,6 +145,8 @@ export const SimpleForm = () => {
         onChangeStatus={(value) => updateField('status', value)}
         purposeOfVisit={formData.purposeOfVisit}
         onChangePurposeOfVisit={(value) => updateField('purposeOfVisit', value)}
+        program={formData.program}
+        onChangeProgram={(value) => updateField('program', value)}
       />
 
       <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>
