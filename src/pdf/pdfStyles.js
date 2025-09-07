@@ -391,8 +391,8 @@ export const pdfStyles = {
     periodRequestedUp: { x: 120, y: 613 },
 
     passport: [
-      { x: 460, y: 553 },
-      { x: 460, y: 375 },
+      { x: 460, y: 553, page: 0 },
+      { x: 460, y: 375, page: 0 },
     ],
     surname: { x: 350, y: 553 },
     firstName: { x: 250, y: 553 },
