@@ -384,10 +384,12 @@ export const pdfStyles = {
     industry: { x: 260, y: 700 },
     other: { x: 160, y: 700 },
 
-    foreignWorker: { x: 555, y: 655 },
-    touristMedical: { x: 555, y: 632 },
+    foreignWorker: { x: 557, y: 653 },
+    touristMedical: { x: 557, y: 632 },
 
-    periodRequestedFrom: { x: 270, y: 600 },
-    periodRequestedUp: { x: 120, y: 600},
+    periodRequestedFrom: { x: 270, y: 615 },
+    periodRequestedUp: { x: 120, y: 615},
+
+    passport: { x: 470, y: 575 },
   }
 };
