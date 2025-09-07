@@ -33,6 +33,16 @@ export const PersonalDetails = ({
   onChangeIsraelEntryDay,
   eMail,
   onChangeEMail,
+  mobile,
+  onChangeMobile,
+  anotherPhone,
+  onChangeAnotherPhone,
+  street,
+  onChangeStreet,
+  town,
+  onChangeTown,
+  zipCode,
+  onChangeZipCode,
 }) => {
   const { t } = useTranslation();
 
@@ -291,7 +301,7 @@ export const PersonalDetails = ({
           {t('personalDetails.israelEntryDay')}
           <input
             className="personalDetails__input"
-            type="text"
+            type="date"
             value={israelEntryDay}
             onChange={(e) => onChangeIsraelEntryDay(e.target.value)}
             required
@@ -305,6 +315,65 @@ export const PersonalDetails = ({
             type="text"
             value={eMail}
             onChange={(e) => onChangeEMail(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.mobile')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={mobile}
+            onChange={(e) => onChangeMobile(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.anotherPhone')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={anotherPhone}
+            onChange={(e) => onChangeAnotherPhone(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.address')}
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.street')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={street}
+            onChange={(e) => onChangeStreet(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.town')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={town}
+            onChange={(e) => onChangeTown(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.zipCode')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={zipCode}
+            onChange={(e) => onChangeZipCode(e.target.value)}
             required
           />
         </label>

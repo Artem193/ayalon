@@ -376,7 +376,7 @@ export const pdfStyles = {
 
   extra: {
     statusNew: { x: 560, y: 727 },
-    statusRenewal: { x: 434, y: 727 },
+    statusRenewal: { x: 435, y: 727 },
 
     nursing: { x: 560, y: 699 },
     agriculture: { x: 460, y: 699 },
@@ -384,8 +384,8 @@ export const pdfStyles = {
     industry: { x: 260, y: 699 },
     other: { x: 160, y: 699 },
 
-    foreignWorker: { x: 557, y: 654 },
-    touristMedical: { x: 557, y: 632 },
+    foreignWorker: { x: 556, y: 654 },
+    touristMedical: { x: 556, y: 632 },
 
     periodRequestedFrom: { x: 270, y: 613 },
     periodRequestedUp: { x: 120, y: 613},
@@ -394,11 +394,17 @@ export const pdfStyles = {
     surname: { x: 350, y: 553 },
     firstName: { x: 250, y: 553 },
     dateOfBirth: { x: 150, y: 553 },
-    M: { x: 83, y: 553 },
+    M: { x: 88, y: 553 },
     F: { x: 40, y: 553 },
 
-    countryOfBirth: { x: 460, y: 525 },
-    israelEntryDay: { x: 250, y: 525 },
-    eMail: { x: 40, y: 525 },
+    countryOfBirth: { x: 460, y: 515 },
+    israelEntryDay: { x: 250, y: 515 },
+    eMail: { x: 40, y: 515 },
+
+    mobile: { x: 460, y: 475 },
+    anotherPhone: { x: 350, y: 475 },
+    street: { x: 210, y: 475 },
+    town: { x: 125, y: 475 },
+    zipCode: { x: 40, y: 475 },
   }
 };

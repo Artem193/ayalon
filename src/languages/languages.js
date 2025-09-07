@@ -58,7 +58,14 @@ export const languages = {
 
         countryOfBirth: '12. Country of birth',
         israelEntryDay: '13. Israel entry day',
-        eMail: '14. e-mail'
+        eMail: '14. e-mail',
+
+        mobile: '15. Mobile phone',
+        anotherPhone: '16. Another phone No',
+        address: '17. Address',
+        street: 'street, house no.',
+        town: 'Town',
+        zipCode: 'Zip code',
       },
 
       infoBlock: {

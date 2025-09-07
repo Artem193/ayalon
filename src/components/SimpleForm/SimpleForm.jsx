@@ -157,6 +157,16 @@ export const SimpleForm = () => {
         onChangeIsraelEntryDay={(value) => updateField('israelEntryDay', value)}
         eMail={formData.eMail}
         onChangeEMail={(value) => updateField('eMail', value)}
+        mobile={formData.mobile}
+        onChangeMobile={(value) => updateField('mobile', value)}
+        anotherPhone={formData.anotherPhone}
+        onChangeAnotherPhone={(value) => updateField('anotherPhone', value)}
+        street={formData.street}
+        onChangeStreet={(value) => updateField('street', value)}
+        town={formData.town}
+        onChangeTown={(value) => updateField('town', value)}
+        zipCode={formData.zipCode}
+        onChangeZipCode={(value) => updateField('zipCode', value)}
       />
 
       <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>

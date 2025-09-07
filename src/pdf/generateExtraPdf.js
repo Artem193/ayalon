@@ -26,6 +26,11 @@ export async function generateExtraPdf(formData) {
     'countryOfBirth',
     'israelEntryDay',
     'eMail',
+    'mobile',
+    'anotherPhone',
+    'street',
+    'town',
+    'zipCode',
   ]
 
   // 🔲 Вставка status (галочка)
