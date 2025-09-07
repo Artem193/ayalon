@@ -16,6 +16,18 @@ export async function generateExtraPdf(formData) {
   const page = pdfDoc.getPage(0);
   const styles = pdfStyles.extra;
 
+  const inputs = [
+    'periodRequestedFrom',
+    'periodRequestedUp',
+    'passport',
+    'surname',
+    'firstName',
+    'dateOfBirth',
+    'countryOfBirth',
+    'israelEntryDay',
+    'eMail',
+  ]
+
   // 🔲 Вставка status (галочка)
   if (formData.status === 'new' && styles.statusNew) {
     page.drawText('X', {
@@ -116,7 +128,7 @@ export async function generateExtraPdf(formData) {
     });
   }
 
-  ['periodRequestedFrom', 'periodRequestedUp', 'passport', 'surname', 'firstName', 'dateOfBirth'].forEach((key) => {
+  inputs.forEach((key) => {
     if (formData[key] && styles[key]) {
       page.drawText(formData[key], {
         x: styles[key].x,

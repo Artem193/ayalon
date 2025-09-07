@@ -376,13 +376,13 @@ export const pdfStyles = {
 
   extra: {
     statusNew: { x: 560, y: 727 },
-    statusRenewal: { x: 433, y: 727 },
+    statusRenewal: { x: 434, y: 727 },
 
     nursing: { x: 560, y: 699 },
-    agriculture: { x: 460, y: 700 },
-    construction: { x: 360, y: 700 },
-    industry: { x: 260, y: 700 },
-    other: { x: 160, y: 700 },
+    agriculture: { x: 460, y: 699 },
+    construction: { x: 360, y: 699 },
+    industry: { x: 260, y: 699 },
+    other: { x: 160, y: 699 },
 
     foreignWorker: { x: 557, y: 654 },
     touristMedical: { x: 557, y: 632 },
@@ -390,11 +390,15 @@ export const pdfStyles = {
     periodRequestedFrom: { x: 270, y: 613 },
     periodRequestedUp: { x: 120, y: 613},
 
-    passport: { x: 470, y: 553 },
+    passport: { x: 460, y: 553 },
     surname: { x: 350, y: 553 },
     firstName: { x: 250, y: 553 },
     dateOfBirth: { x: 150, y: 553 },
-    M: { x: 118, y: 553 },
-    F: { x: 75, y: 553 },
+    M: { x: 83, y: 553 },
+    F: { x: 40, y: 553 },
+
+    countryOfBirth: { x: 460, y: 525 },
+    israelEntryDay: { x: 250, y: 525 },
+    eMail: { x: 40, y: 525 },
   }
 };

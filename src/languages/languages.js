@@ -55,6 +55,10 @@ export const languages = {
         periodRequested: '11. Insurance period requested',
         periodRequestedFrom: 'From date',
         periodRequestedUp: 'Up to Date',
+
+        countryOfBirth: '12. Country of birth',
+        israelEntryDay: '13. Israel entry day',
+        eMail: '14. e-mail'
       },
 
       infoBlock: {

@@ -151,6 +151,12 @@ export const SimpleForm = () => {
         onChangePeriodRequestedFrom={(value) => updateField('periodRequestedFrom', value)}
         periodRequestedUp={formData.periodRequestedUp}
         onChangePeriodRequestedUp={(value) => updateField('periodRequestedUp', value)}
+        countryOfBirth={formData.countryOfBirth}
+        onChangeCountryOfBirth={(value) => updateField('countryOfBirth', value)}
+        israelEntryDay={formData.israelEntryDay}
+        onChangeIsraelEntryDay={(value) => updateField('israelEntryDay', value)}
+        eMail={formData.eMail}
+        onChangeEMail={(value) => updateField('eMail', value)}
       />
 
       <div className='simpleForm__extraText'>{t('simpleForm.extraText1')}</div>

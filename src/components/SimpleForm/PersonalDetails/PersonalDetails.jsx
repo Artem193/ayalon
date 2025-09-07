@@ -27,6 +27,12 @@ export const PersonalDetails = ({
   onChangePeriodRequestedFrom,
   periodRequestedUp,
   onChangePeriodRequestedUp,
+  countryOfBirth,
+  onChangeCountryOfBirth,
+  israelEntryDay,
+  onChangeIsraelEntryDay,
+  eMail,
+  onChangeEMail,
 }) => {
   const { t } = useTranslation();
 
@@ -266,6 +272,39 @@ export const PersonalDetails = ({
             type="date"
             value={periodRequestedUp}
             onChange={(e) => onChangePeriodRequestedUp(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.countryOfBirth')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={countryOfBirth}
+            onChange={(e) => onChangeCountryOfBirth(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.israelEntryDay')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={israelEntryDay}
+            onChange={(e) => onChangeIsraelEntryDay(e.target.value)}
+            required
+          />
+        </label>
+
+        <label className="personalDetails__label">
+          {t('personalDetails.eMail')}
+          <input
+            className="personalDetails__input"
+            type="text"
+            value={eMail}
+            onChange={(e) => onChangeEMail(e.target.value)}
             required
           />
         </label>
