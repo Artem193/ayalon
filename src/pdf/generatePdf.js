@@ -216,7 +216,6 @@
 //   return new Blob([pdfBytes], { type: 'application/pdf' });
 // }
 
-
 import { PDFDocument, rgb } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit';
 import { pdfStyles } from './pdfStyles';
@@ -234,44 +233,57 @@ const FONTS = {
   cn: '/fonts/NotoSerifCJKsc-Regular.otf',    // Chinese
 };
 
-/* ---------------------- Font selection with safe fallback ---------------------- */
-function fontForCodePoint(code, fonts) {
-  // перевіряємо всі шрифти, чи є символ
-  for (const key of ['he', 'en', 'th', 'cn']) {
-    const font = fonts[key];
-    if (font && font.hasGlyphForCodePoint(code)) {
-      return font;
+/* ---------------------------- helpers ---------------------------- */
+
+// Намалювати символ у першому шрифті, який його тягне
+function safeDrawChar(page, ch, x, y, size, fonts) {
+  const candidates = [fonts.he, fonts.en, fonts.th, fonts.cn];
+  for (const f of candidates) {
+    if (!f) continue;
+    try {
+      page.drawText(ch, { x, y, size, font: f });
+      return f.widthOfTextAtSize(ch, size);
+    } catch (err) {
+      // цей шрифт не підтримує символ
+      continue;
     }
   }
-  console.warn('❌ Missing glyph for code:', code.toString(16));
-  return fonts.en; // дефолт, навіть якщо квадратик
+  console.warn('❌ Missing glyph for:', ch, ch.codePointAt(0).toString(16));
+  return 0;
 }
 
-/* ----------------------------- Mixed text drawing ----------------------------- */
+// Намалювати рядок посимвольно
 function safeDrawMixedText(page, text, x, y, size, fonts) {
   let cursorX = x;
-  const str = String(text ?? '');
-
-  for (const ch of str) {
-    const code = ch.codePointAt(0);
-    const font = fontForCodePoint(code, fonts);
-    const w = font.widthOfTextAtSize(ch, size);
-    page.drawText(ch, { x: cursorX, y, size, font });
+  for (const ch of String(text ?? '')) {
+    const w = safeDrawChar(page, ch, cursorX, y, size, fonts);
     cursorX += w;
   }
-  return cursorX;
 }
 
+// Порахувати ширину рядка
 function mixedTextWidth(text, size, fonts) {
   let w = 0;
   for (const ch of String(text ?? '')) {
-    const code = ch.codePointAt(0);
-    const font = fontForCodePoint(code, fonts);
-    w += font.widthOfTextAtSize(ch, size);
+    const candidates = [fonts.he, fonts.en, fonts.th, fonts.cn];
+    let added = false;
+    for (const f of candidates) {
+      try {
+        w += f.widthOfTextAtSize(ch, size);
+        added = true;
+        break;
+      } catch (err) {
+        continue;
+      }
+    }
+    if (!added) {
+      console.warn('❌ Missing glyph (width):', ch);
+    }
   }
   return w;
 }
 
+// Переноси рядків
 function wrapMixed(text, size, maxWidth, fonts) {
   const s = String(text ?? '');
   const lines = [];
@@ -289,7 +301,8 @@ function wrapMixed(text, size, maxWidth, fonts) {
   return lines;
 }
 
-/* ---------------------------------- Main ---------------------------------- */
+/* ---------------------------- main ---------------------------- */
+
 export async function generatePdf(language, formData, signatureDataUrl) {
   const templatePath = TEMPLATES[language] || TEMPLATES.en;
   const templateBytes = await fetch(templatePath).then((res) => res.arrayBuffer());
@@ -297,7 +310,7 @@ export async function generatePdf(language, formData, signatureDataUrl) {
 
   pdfDoc.registerFontkit(fontkit);
 
-  // Завантажуємо всі шрифти
+  // Завантажуємо шрифти
   const [enBytes, heBytes, thBytes, cnBytes] = await Promise.all([
     fetch(FONTS.en).then((r) => r.arrayBuffer()),
     fetch(FONTS.he).then((r) => r.arrayBuffer()),
@@ -315,7 +328,7 @@ export async function generatePdf(language, formData, signatureDataUrl) {
   const pages = pdfDoc.getPages();
   const styles = pdfStyles[language] || pdfStyles.en;
 
-  // 1. Текстові поля
+  // 1. Звичайні текстові поля
   Object.entries(formData).forEach(([field, value]) => {
     if (!value || !styles[field]) return;
     if (
@@ -350,7 +363,7 @@ export async function generatePdf(language, formData, signatureDataUrl) {
     }
   }
 
-  // 1.2 answerDescription
+  // 1.2 answerDescription з переносами
   if (formData.answerDescription && styles.answerDescription) {
     const st = styles.answerDescription;
     const page = pages[st.page ?? 0];
