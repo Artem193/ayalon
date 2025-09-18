@@ -226,78 +226,93 @@ const TEMPLATES = {
   cn: '/pdf-templates/ayalon_cn.pdf',
 };
 
+// 👉 зверни увагу на шляхи: файли реально мають лежати в /public/fonts/
 const FONTS = {
-  en: '/fonts/NotoSans-Regular.ttf',          // Latin + Cyrillic
-  he: '/fonts/NotoSansHebrew-Regular.ttf',    // Hebrew
-  th: '/fonts/NotoSansThai-Regular.ttf',      // Thai
-  cn: '/fonts/NotoSerifCJKsc-Regular.otf',    // Chinese
+  en: ['/fonts/NotoSans-Regular.ttf'],                             // латиниця+кирилиця
+  he: ['/fonts/NotoSansHebrew-Regular.ttf'],                       // іврит
+  th: [
+    '/fonts/NotoSansThai-Regular.ttf',                             // бажаний (≈120–130 KB)
+    '/fonts/NotoSansThaiLooped-Regular.ttf',                       // фолбек (≈80–100 KB)
+  ],
+  cn: ['/fonts/NotoSerifCJKsc-Regular.otf'],                       // китайський (≈24 MB)
 };
 
-/* ---------------------------- helpers ---------------------------- */
+/* ---------------------------- loaders ---------------------------- */
 
-// Намалювати символ у першому шрифті, який його тягне
+async function fetchArrayBuffer(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`fetch ${url} -> ${res.status}`);
+  return res.arrayBuffer();
+}
+
+// пробуємо кілька шляхів для одного шрифту, поки якийсь не спрацює
+async function loadFirstAvailableFont(pdfDoc, urls) {
+  let lastErr;
+  for (const url of urls) {
+    try {
+      const bytes = await fetchArrayBuffer(url);
+      return await pdfDoc.embedFont(bytes, { subset: true });
+    } catch (e) {
+      lastErr = e;
+      console.warn('Font candidate failed:', url, e?.message || e);
+    }
+  }
+  throw lastErr || new Error('No font candidates worked');
+}
+
+/* ---------------------------- text helpers ---------------------------- */
+
+// малюємо 1 символ шрифтом, який його «тягне»
 function safeDrawChar(page, ch, x, y, size, fonts) {
+  // порядок важливий: дешевші/дрібніші шрифти — спочатку
   const candidates = [fonts.he, fonts.en, fonts.th, fonts.cn];
   for (const f of candidates) {
     if (!f) continue;
     try {
+      // якщо glyph відсутній або формат кривий — pdf-lib кине помилку; ловимо й пробуємо наступний
       page.drawText(ch, { x, y, size, font: f });
       return f.widthOfTextAtSize(ch, size);
-    } catch (err) {
-      // цей шрифт не підтримує символ
-      continue;
-    }
+    } catch (_) { /* try next */ }
   }
-  console.warn('❌ Missing glyph for:', ch, ch.codePointAt(0).toString(16));
+  // як зовсім немає гліфа — пропускаємо символ (або намалюй □, якщо хочеш)
+  console.warn('Missing glyph for char:', ch, ch.codePointAt(0)?.toString(16));
   return 0;
 }
 
-// Намалювати рядок посимвольно
-function safeDrawMixedText(page, text, x, y, size, fonts) {
-  let cursorX = x;
-  for (const ch of String(text ?? '')) {
-    const w = safeDrawChar(page, ch, cursorX, y, size, fonts);
-    cursorX += w;
-  }
-}
-
-// Порахувати ширину рядка
 function mixedTextWidth(text, size, fonts) {
   let w = 0;
-  for (const ch of String(text ?? '')) {
+  const s = String(text ?? '');
+  for (const ch of s) {
     const candidates = [fonts.he, fonts.en, fonts.th, fonts.cn];
     let added = false;
     for (const f of candidates) {
-      try {
-        w += f.widthOfTextAtSize(ch, size);
-        added = true;
-        break;
-      } catch (err) {
-        continue;
-      }
+      try { w += f.widthOfTextAtSize(ch, size); added = true; break; } catch (_) {}
     }
-    if (!added) {
-      console.warn('❌ Missing glyph (width):', ch);
-    }
+    if (!added) console.warn('Missing glyph (width):', ch);
   }
   return w;
 }
 
-// Переноси рядків
+function safeDrawMixedText(page, text, x, y, size, fonts) {
+  let cx = x;
+  const s = String(text ?? '');
+  for (const ch of s) cx += safeDrawChar(page, ch, cx, y, size, fonts);
+}
+
 function wrapMixed(text, size, maxWidth, fonts) {
   const s = String(text ?? '');
   const lines = [];
   let line = '';
   for (const ch of s) {
-    const next = line + ch;
-    if (mixedTextWidth(next, size, fonts) > maxWidth && line.length > 0) {
+    const test = line + ch;
+    if (mixedTextWidth(test, size, fonts) > maxWidth && line.length) {
       lines.push(line);
       line = ch;
     } else {
-      line = next;
+      line = test;
     }
   }
-  if (line.length) lines.push(line);
+  if (line) lines.push(line);
   return lines;
 }
 
@@ -305,32 +320,29 @@ function wrapMixed(text, size, maxWidth, fonts) {
 
 export async function generatePdf(language, formData, signatureDataUrl) {
   const templatePath = TEMPLATES[language] || TEMPLATES.en;
-  const templateBytes = await fetch(templatePath).then((res) => res.arrayBuffer());
+  const templateBytes = await fetchArrayBuffer(templatePath);
   const pdfDoc = await PDFDocument.load(templateBytes);
 
   pdfDoc.registerFontkit(fontkit);
 
-  // Завантажуємо шрифти
-  const [enBytes, heBytes, thBytes, cnBytes] = await Promise.all([
-    fetch(FONTS.en).then((r) => r.arrayBuffer()),
-    fetch(FONTS.he).then((r) => r.arrayBuffer()),
-    fetch(FONTS.th).then((r) => r.arrayBuffer()),
-    fetch(FONTS.cn).then((r) => r.arrayBuffer()),
+  // вантажимо шрифти з фолбеками
+  const [en, he, th, cn] = await Promise.all([
+    loadFirstAvailableFont(pdfDoc, FONTS.en),
+    loadFirstAvailableFont(pdfDoc, FONTS.he),
+    loadFirstAvailableFont(pdfDoc, FONTS.th),
+    loadFirstAvailableFont(pdfDoc, FONTS.cn),
   ]);
 
-  const fonts = {
-    en: await pdfDoc.embedFont(enBytes, { subset: true }),
-    he: await pdfDoc.embedFont(heBytes, { subset: true }),
-    th: await pdfDoc.embedFont(thBytes, { subset: true }),
-    cn: await pdfDoc.embedFont(cnBytes, { subset: true }),
-  };
+  const fonts = { en, he, th, cn };
 
   const pages = pdfDoc.getPages();
   const styles = pdfStyles[language] || pdfStyles.en;
 
-  // 1. Звичайні текстові поля
+  // 1) прості текстові поля
   Object.entries(formData).forEach(([field, value]) => {
     if (!value || !styles[field]) return;
+
+    // радіо/довгі поля — нижче
     if (
       (field.startsWith('question') && typeof value === 'string' && value.startsWith('question')) ||
       field === 'answerDescription' ||
@@ -343,7 +355,7 @@ export async function generatePdf(language, formData, signatureDataUrl) {
     safeDrawMixedText(page, value, st.x, st.y, st.size || 9, fonts);
   });
 
-  // 1.0 nameProposer у двох місцях
+  // 1.0) nameProposer у двох місцях
   if (formData.nameProposer) {
     for (const key of ['nameProposer1', 'nameProposer2']) {
       const st = styles[key];
@@ -353,7 +365,7 @@ export async function generatePdf(language, formData, signatureDataUrl) {
     }
   }
 
-  // 1.1 date у двох місцях
+  // 1.1) date у двох місцях
   if (formData.date) {
     for (const key of ['date1', 'date2']) {
       const st = styles[key];
@@ -363,66 +375,54 @@ export async function generatePdf(language, formData, signatureDataUrl) {
     }
   }
 
-  // 1.2 answerDescription з переносами
+  // 1.2) довге поле з переносами
   if (formData.answerDescription && styles.answerDescription) {
     const st = styles.answerDescription;
     const page = pages[st.page ?? 0];
     const size = st.size || 9;
     const lineHeight = st.lineHeight || 14;
     const lines = wrapMixed(formData.answerDescription, size, st.width, fonts);
-    lines.forEach((line, idx) => {
-      safeDrawMixedText(page, line, st.x, st.y - idx * lineHeight, size, fonts);
+    lines.forEach((line, i) => {
+      safeDrawMixedText(page, line, st.x, st.y - i * lineHeight, size, fonts);
     });
   }
 
-  // 2. gender
+  // 2) gender
   if (formData.gender) {
     const key = formData.gender === 'M' ? 'genderMLine' : 'genderFLine';
     const st = styles[key];
     if (st) {
       const page = pages[st.page ?? 0];
       page.drawRectangle({
-        x: st.x,
-        y: st.y,
-        width: st.width ?? 12,
-        height: st.height ?? 1,
-        color: rgb(0, 0, 0),
-        opacity: 1,
+        x: st.x, y: st.y,
+        width: st.width ?? 12, height: st.height ?? 1,
+        color: rgb(0, 0, 0), opacity: 1,
       });
     }
   }
 
-  // 3. питання Yes/No
+  // 3) X для Yes/No
   for (let i = 1; i <= 34; i++) {
-    const fieldKey = `question${i}`;
-    const answer = formData[fieldKey];
-    if (!answer) continue;
-    const yes = styles[`${fieldKey}Yes`];
-    const no = styles[`${fieldKey}No`];
-    const getPage = (coords) => pages[coords?.page ?? 0];
+    const k = `question${i}`;
+    const a = formData[k];
+    if (!a) continue;
+    const yes = styles[`${k}Yes`];
+    const no  = styles[`${k}No`];
+    const pageOf = (c) => pages[c?.page ?? 0];
 
-    if (answer === `${fieldKey}Yes` && yes) {
-      getPage(yes).drawText('X', { x: yes.x, y: yes.y, size: 12, font: fonts.en });
-    } else if (answer === `${fieldKey}No` && no) {
-      getPage(no).drawText('X', { x: no.x, y: no.y, size: 12, font: fonts.en });
-    }
+    if (a === `${k}Yes` && yes) pageOf(yes).drawText('X', { x: yes.x, y: yes.y, size: 12, font: fonts.en });
+    else if (a === `${k}No` && no) pageOf(no).drawText('X',  { x: no.x,  y: no.y,  size: 12, font: fonts.en });
   }
 
-  // 4. підпис
+  // 4) підпис
   if (signatureDataUrl) {
-    const sigBytes = await fetch(signatureDataUrl).then((res) => res.arrayBuffer());
-    const sigImage = await pdfDoc.embedPng(sigBytes);
+    const sigBytes = await fetchArrayBuffer(signatureDataUrl);
+    const sig = await pdfDoc.embedPng(sigBytes);
     for (const key of ['signature1', 'signature2', 'signature3']) {
       const st = styles[key];
       if (!st) continue;
       const page = pages[st.page ?? 0];
-      page.drawImage(sigImage, {
-        x: st.x,
-        y: st.y,
-        width: st.width,
-        height: st.height,
-        opacity: 1,
-      });
+      page.drawImage(sig, { x: st.x, y: st.y, width: st.width, height: st.height, opacity: 1 });
     }
   }
 
