@@ -179,61 +179,34 @@ import { PDFDocument } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit';
 import { pdfStyles } from './pdfStyles';
 
-const FONTS = {
-  en: '/fonts/NotoSans-Regular.ttf',       // Latin + Cyrillic
-  he: '/fonts/NotoSansHebrew-Regular.ttf', // Hebrew
-  th: '/fonts/NotoSansThai-Regular.ttf',   // Thai
-  cn: '/fonts/NotoSerifCJKsc-Regular.otf', // Chinese
-};
-
-// Намалювати символ у правильному шрифті
-function safeDrawChar(page, ch, x, y, size, fonts) {
-  const candidates = [fonts.he, fonts.en, fonts.th, fonts.cn];
-  for (const f of candidates) {
-    try {
-      f.encodeText(ch); // перевірка, чи підтримується символ
-      page.drawText(ch, { x, y, size, font: f });
-      return f.widthOfTextAtSize(ch, size);
-    } catch (err) {
-      continue;
-    }
-  }
-  return 0;
-}
-
-// Намалювати рядок посимвольно
-function safeDrawMixedText(page, text, x, y, size, fonts) {
-  let cursorX = x;
-  for (const ch of String(text ?? '')) {
-    const w = safeDrawChar(page, ch, cursorX, y, size, fonts);
-    cursorX += w;
-  }
-}
-
 export async function generateExtraPdf(formData) {
   const templatePath = '/pdf-templates/ayalon_extra.pdf';
+  const mainFontPath = '/fonts/NotoSans-Regular.ttf';        // латиниця
+  const hebrewFontPath = '/fonts/NotoSansHebrew-Regular.ttf'; // іврит
+
   const templateBytes = await fetch(templatePath).then(res => res.arrayBuffer());
+  const [mainFontBytes, hebrewFontBytes] = await Promise.all([
+    fetch(mainFontPath).then(res => res.arrayBuffer()),
+    fetch(hebrewFontPath).then(res => res.arrayBuffer()),
+  ]);
 
   const pdfDoc = await PDFDocument.load(templateBytes);
   pdfDoc.registerFontkit(fontkit);
 
-  // завантажуємо всі шрифти
-  const [enBytes, heBytes, thBytes, cnBytes] = await Promise.all([
-    fetch(FONTS.en).then(res => res.arrayBuffer()),
-    fetch(FONTS.he).then(res => res.arrayBuffer()),
-    fetch(FONTS.th).then(res => res.arrayBuffer()),
-    fetch(FONTS.cn).then(res => res.arrayBuffer()),
-  ]);
-
-  const fonts = {
-    en: await pdfDoc.embedFont(enBytes, { subset: true }),
-    he: await pdfDoc.embedFont(heBytes, { subset: true }),
-    th: await pdfDoc.embedFont(thBytes, { subset: true }),
-    cn: await pdfDoc.embedFont(cnBytes, { subset: true }),
-  };
+  const mainFont = await pdfDoc.embedFont(mainFontBytes, { subset: true });
+  const hebrewFont = await pdfDoc.embedFont(hebrewFontBytes, { subset: true });
 
   const page = pdfDoc.getPage(0);
   const styles = pdfStyles.extra;
+
+  // функція вибору шрифту
+  function containsHebrew(text) {
+    return /[\u0590-\u05FF]/.test(text);
+  }
+  function drawSmartText(text, x, y, size = 10) {
+    const font = containsHebrew(text) ? hebrewFont : mainFont;
+    page.drawText(text, { x, y, size, font });
+  }
 
   const inputs = [
     'periodRequestedFrom',
@@ -258,30 +231,51 @@ export async function generateExtraPdf(formData) {
     'contactPhone',
   ];
 
-  // чекбокси
-  const checkboxFields = [
-    { key: 'status', values: { new: 'statusNew', renewal: 'statusRenewal' } },
-    { key: 'purposeOfVisit', values: { nursing: 'nursing', agriculture: 'agriculture', construction: 'construction', industry: 'industry', other: 'other' } },
-    { key: 'program', values: { foreignWorker: 'foreignWorker', touristMedical: 'touristMedical' } },
-    { key: 'gender', values: { M: 'M', F: 'F' } },
-    { key: 'previousIns', values: { yes: 'yes', no: 'no' } },
-  ];
+  // 🔲 статуси
+  if (formData.status === 'new' && styles.statusNew) {
+    page.drawText('X', { x: styles.statusNew.x, y: styles.statusNew.y, size: 12, font: mainFont });
+  }
+  if (formData.status === 'renewal' && styles.statusRenewal) {
+    page.drawText('X', { x: styles.statusRenewal.x, y: styles.statusRenewal.y, size: 12, font: mainFont });
+  }
 
-  checkboxFields.forEach(({ key, values }) => {
-    const val = formData[key];
-    const styleKey = values[val];
-    if (styleKey && styles[styleKey]) {
-      const { x, y } = styles[styleKey];
-      page.drawText('X', { x, y, size: 12, font: fonts.en });
+  // 🔲 purposeOfVisit
+  ['nursing', 'agriculture', 'construction', 'industry', 'other'].forEach(type => {
+    if (formData.purposeOfVisit === type && styles[type]) {
+      page.drawText('X', { x: styles[type].x, y: styles[type].y, size: 12, font: mainFont });
     }
   });
 
-  // текстові поля
+  // 🔲 program
+  if (formData.program === 'foreignWorker' && styles.foreignWorker) {
+    page.drawText('X', { x: styles.foreignWorker.x, y: styles.foreignWorker.y, size: 12, font: mainFont });
+  }
+  if (formData.program === 'touristMedical' && styles.touristMedical) {
+    page.drawText('X', { x: styles.touristMedical.x, y: styles.touristMedical.y, size: 12, font: mainFont });
+  }
+
+  // 🔲 gender
+  if (formData.gender === 'M' && styles.M) {
+    page.drawText('X', { x: styles.M.x, y: styles.M.y, size: 12, font: mainFont });
+  }
+  if (formData.gender === 'F' && styles.F) {
+    page.drawText('X', { x: styles.F.x, y: styles.F.y, size: 12, font: mainFont });
+  }
+
+  // 🔲 previousIns
+  if (formData.previousIns === 'yes' && styles.yes) {
+    page.drawText('X', { x: styles.yes.x, y: styles.yes.y, size: 12, font: mainFont });
+  }
+  if (formData.previousIns === 'no' && styles.no) {
+    page.drawText('X', { x: styles.no.x, y: styles.no.y, size: 12, font: mainFont });
+  }
+
+  // 🔲 інпут поля
   inputs.forEach((key) => {
     if (formData[key] && styles[key]) {
       const entries = Array.isArray(styles[key]) ? styles[key] : [styles[key]];
       entries.forEach(({ x, y }) => {
-        safeDrawMixedText(page, formData[key], x, y, 10, fonts);
+        drawSmartText(formData[key], x, y, 10);
       });
     }
   });
