@@ -51,7 +51,7 @@ export const languages = {
         program: '10. Insurance program wanted',
         foreignWorker: 'Policy for Foreign worker with permit to work in Israel',
         touristMedical: 'Tourist Medical Insurance',
-        
+
         periodRequested: '11. Insurance period requested',
         periodRequestedFrom: 'From date',
         periodRequestedUp: 'Up to Date',
@@ -182,6 +182,47 @@ export const languages = {
 
         male: '男',
         female: '女',
+
+        status: '8. 保险状态',
+        renewal: '续保/更新',
+        new: '新保险',
+
+        purposeOfVisit: '9. 来以色列的目的:',
+        nursing: '护理',
+        agriculture: '农业',
+        construction: '建筑',
+        industry: '工业',
+        other: '其他',
+
+        program: '10. 所需保险计划',
+        foreignWorker: '持有工作许可证的外国工人保险',
+        touristMedical: '游客医疗保险',
+
+        periodRequested: '11. 申请的保险期限',
+        periodRequestedFrom: '起始日期',
+        periodRequestedUp: '截止日期',
+
+        countryOfBirth: '12. 出生国家',
+        israelEntryDay: '13. 入境以色列日期',
+        eMail: '14. 电子邮箱',
+
+        mobile: '15. 手机号码',
+        anotherPhone: '16. 其他电话号码',
+        address: '17. 地址',
+        street: '街道、门牌号',
+        town: '城市',
+        zipCode: '邮政编码',
+
+        previousIns: '18. 在以色列是否有过保险',
+        yes: '是',
+        no: '否',
+        insuranceCo: '保险公司',
+        membershipNo: '会员号',
+        fromDate: '起始日期',
+        upToDate: '截止日期',
+
+        contactName: '19. 联系人姓名',
+        contactPhone: '20. 联系人电话',
       },
 
       infoBlock: {
@@ -285,6 +326,47 @@ export const languages = {
 
         male: 'ชาย',
         female: 'หญิง',
+
+        status: '8. สถานะของประกัน',
+        renewal: 'ต่ออายุ/อัปเดต',
+        new: 'ประกันใหม่',
+
+        purposeOfVisit: '9. วัตถุประสงค์ในการมาประเทศอิสราเอล:',
+        nursing: 'การดูแลผู้ป่วย/ผู้สูงอายุ',
+        agriculture: 'เกษตรกรรม',
+        construction: 'ก่อสร้าง',
+        industry: 'อุตสาหกรรม',
+        other: 'อื่น ๆ',
+
+        program: '10. โปรแกรมประกันที่ต้องการ',
+        foreignWorker: 'กรมธรรม์สำหรับแรงงานต่างชาติที่มีใบอนุญาตทำงานในอิสราเอล',
+        touristMedical: 'ประกันสุขภาพสำหรับนักท่องเที่ยว',
+
+        periodRequested: '11. ระยะเวลาประกันที่ร้องขอ',
+        periodRequestedFrom: 'ตั้งแต่วันที่',
+        periodRequestedUp: 'ถึงวันที่',
+
+        countryOfBirth: '12. ประเทศที่เกิด',
+        israelEntryDay: '13. วันที่เข้าประเทศอิสราเอล',
+        eMail: '14. อีเมล',
+
+        mobile: '15. โทรศัพท์มือถือ',
+        anotherPhone: '16. หมายเลขโทรศัพท์อื่น',
+        address: '17. ที่อยู่',
+        street: 'ถนน บ้านเลขที่',
+        town: 'เมือง',
+        zipCode: 'รหัสไปรษณีย์',
+
+        previousIns: '18. เคยมีประกันในอิสราเอลหรือไม่',
+        yes: 'ใช่',
+        no: 'ไม่ใช่',
+        insuranceCo: 'บริษัทประกัน',
+        membershipNo: 'หมายเลขสมาชิก',
+        fromDate: 'ตั้งแต่วันที่',
+        upToDate: 'ถึงวันที่',
+
+        contactName: '19. ชื่อผู้ติดต่อ',
+        contactPhone: '20. เบอร์โทรศัพท์ผู้ติดต่อ',
       },
 
       infoBlock: {
