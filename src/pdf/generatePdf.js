@@ -229,7 +229,7 @@ const TEMPLATES = {
 const FONTS = {
   en: '/fonts/NotoSans-Regular.ttf',          // Latin + Cyrillic
   he: '/fonts/NotoSansHebrew-Regular.ttf',    // Hebrew
-  th: '/NotoSansThai-Regular.ttf',      // Thai
+  th: '/fonts/NotoSansThai-Regular.ttf',      // Thai
   cn: '/fonts/NotoSerifCJKsc-Regular.otf',    // Chinese
 };
 
