@@ -235,36 +235,43 @@ const FONTS = {
 
 /* ---------------------------- helpers ---------------------------- */
 
-// Санітизація тексту
+// Очистка даних (видаляє контрольні символи та "биті" сурогати)
 function sanitizeInput(val) {
   if (val == null) return '';
-  return String(val).replace(/[\u0000-\u001F]/g, ''); // прибирає контрольні символи
+  const s = String(val);
+  const cleaned = s
+    .replace(/[\u0000-\u001F\u007F-\u009F]/g, ch => {
+      console.warn('❌ Control char removed:', ch.codePointAt(0).toString(16));
+      return '';
+    })
+    .replace(/[\uD800-\uDFFF]/g, ch => {
+      console.warn('❌ Invalid surrogate removed:', ch.codePointAt(0).toString(16));
+      return '';
+    });
+  return cleaned;
 }
 
-// Намалювати символ у першому шрифті, який його підтримує
+// Намалювати символ у першому шрифті, який його тягне
 function safeDrawChar(page, ch, x, y, size, fonts) {
-  if (!ch) return 0;
-  const code = ch.codePointAt(0);
-  if (!code || code > 0x10FFFF) {
-    console.warn('⚠️ Invalid char skipped:', ch);
-    return 0;
-  }
-
   const candidates = [fonts.he, fonts.en, fonts.th, fonts.cn];
   for (const f of candidates) {
+    if (!f) continue;
     try {
       page.drawText(ch, { x, y, size, font: f });
       return f.widthOfTextAtSize(ch, size);
-    } catch (_) {}
+    } catch (err) {
+      continue;
+    }
   }
-  console.warn('❌ Missing glyph for:', ch, code.toString(16));
+  console.warn('❌ Missing glyph for:', ch, ch.codePointAt(0).toString(16));
   return 0;
 }
 
 // Намалювати рядок посимвольно
 function safeDrawMixedText(page, text, x, y, size, fonts) {
+  const s = sanitizeInput(text);
   let cursorX = x;
-  for (const ch of sanitizeInput(text)) {
+  for (const ch of s) {
     const w = safeDrawChar(page, ch, cursorX, y, size, fonts);
     cursorX += w;
   }
@@ -272,14 +279,22 @@ function safeDrawMixedText(page, text, x, y, size, fonts) {
 
 // Порахувати ширину рядка
 function mixedTextWidth(text, size, fonts) {
+  const s = sanitizeInput(text);
   let w = 0;
-  for (const ch of sanitizeInput(text)) {
+  for (const ch of s) {
     const candidates = [fonts.he, fonts.en, fonts.th, fonts.cn];
+    let added = false;
     for (const f of candidates) {
       try {
         w += f.widthOfTextAtSize(ch, size);
+        added = true;
         break;
-      } catch (_) {}
+      } catch (err) {
+        continue;
+      }
+    }
+    if (!added) {
+      console.warn('❌ Missing glyph (width):', ch);
     }
   }
   return w;
