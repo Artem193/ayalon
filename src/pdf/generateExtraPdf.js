@@ -4,8 +4,8 @@ import { pdfStyles } from './pdfStyles';
 
 export async function generateExtraPdf(formData) {
   const templatePath = '/pdf-templates/ayalon_extra.pdf';
-  const mainFontPath = '/fonts/NotoSans-Regular.ttf';        // латиниця
-  const hebrewFontPath = '/fonts/NotoSansHebrew-Regular.ttf'; // іврит
+  const mainFontPath = '/fonts/NotoSans-Regular.ttf';
+  const hebrewFontPath = '/fonts/NotoSansHebrew-Regular.ttf'; 
 
   const templateBytes = await fetch(templatePath).then(res => res.arrayBuffer());
   const [mainFontBytes, hebrewFontBytes] = await Promise.all([

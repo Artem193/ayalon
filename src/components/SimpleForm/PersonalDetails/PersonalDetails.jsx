@@ -459,7 +459,7 @@ export const PersonalDetails = ({
           />
         </label>
 
-         <label className="personalDetails__label">
+         {/* <label className="personalDetails__label">
           {t('personalDetails.contactName')}
           <input
             className="personalDetails__input"
@@ -477,7 +477,7 @@ export const PersonalDetails = ({
             value={contactPhone}
             onChange={(e) => onChangeContactPhone(e.target.value)}
           />
-        </label>
+        </label> */}
       </div>
     </div>
   );

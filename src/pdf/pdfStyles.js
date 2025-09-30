@@ -392,15 +392,15 @@ export const pdfStyles = {
 
     passport: [
       { x: 460, y: 553 },
-      { x: 460, y: 375 },
+      // { x: 460, y: 375 },
     ],
     surname: [
       { x: 350, y: 553 },
-      { x: 350, y: 375 },
+      // { x: 350, y: 375 },
     ],
     firstName: [
       { x: 250, y: 553 },
-      { x: 250, y: 375 },
+      // { x: 250, y: 375 },
     ],
     dateOfBirth: { x: 150, y: 553 },
     M: { x: 87, y: 552 },
@@ -442,7 +442,7 @@ export const pdfStyles = {
     fromDate: { x: 185, y: 432 },
     upToDate: { x: 40, y: 432 },
 
-    contactName: { x: 150, y: 375 },
-    contactPhone: { x: 40, y: 375 },
+    // contactName: { x: 150, y: 375 },
+    // contactPhone: { x: 40, y: 375 },
   }
 };
